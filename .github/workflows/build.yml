@@ -24,28 +24,19 @@ jobs:
         with:
           flutter-version: '3.19.6'
 
-      - name: Kutuphaneleri Yukle (Zorla Guncelleme)
+      - name: Kutuphaneleri Yukle
         run: |
-          # ADIM 1: requirements.txt dosyasındaki eski sürüm isteğini SİLİYORUZ.
-          # Bu sayede bilgisayarın kafası karışmayacak.
-          sed -i '/flet/d' requirements.txt
-          
-          # ADIM 2: Diğer kütüphaneleri yüklüyoruz.
           pip install -r requirements.txt
-          
-          # ADIM 3: İsim değiştirme özelliğini bilen sürümü (0.24.1) yüklüyoruz.
-          pip install flet==0.24.1
-          
-          # KONTROL: Ekrana sürümü yazdıralım.
-          echo "Su an kullanılan Flet surumu:"
-          flet --version
+          # Senin çalışan eski sürümüne geri dönüyoruz:
+          pip install flet==0.21.2
 
       - name: APK Derle
-        # Artık sistemde 0.24.1 olduğu için bu komut HATA VERMEDEN çalışacak:
-        run: flet build apk --product-name "Hilal_kpss" --icon icon.png --verbose
+        # Hata veren (--product-name) kısımlarını sildim.
+        # Artık hata vermeden eskisi gibi çalışacak.
+        run: flet build apk --verbose
 
       - name: Dosyayi Yukle
         uses: actions/upload-artifact@v4
         with:
-          name: Saglam-APK
+          name: Hilal_kpss
           path: build/apk/app-release.apk
