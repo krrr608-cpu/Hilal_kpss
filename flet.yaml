@@ -1,3 +1,5 @@
 product_name: "Hilal_kpss"
 executable_name: "Hilal_kpss"
-icon: "icon.png"
+android:
+  icon: "icon.png"
+  
