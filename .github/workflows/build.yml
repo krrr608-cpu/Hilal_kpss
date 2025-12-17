@@ -1,19 +1,39 @@
 name: APK Yapici
 on: [push]
+
 jobs:
   apk-yap:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: Kodlari Cek
+        uses: actions/checkout@v3
+
+      - name: Python Kur
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - uses: subosito/flutter-action@v2
+
+      - name: Java Kur (Android icin sart)
+        uses: actions/setup-java@v3
         with:
-          flutter-version: '3.19.x'
-      - run: pip install flet
-      - run: flet build apk --verbose
-      - uses: actions/upload-artifact@v4
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Flutter Kur
+        uses: subosito/flutter-action@v2
         with:
-          name: KPSS-Uygulamasi
+          flutter-version: '3.22.0' # Sürümü güncelledik
+
+      - name: Kutuphaneleri Yukle
+        run: |
+          pip install flet
+          pip install -r requirements.txt
+
+      - name: APK Derle
+        run: flet build apk --verbose
+
+      - name: Dosyayi Yukle
+        uses: actions/upload-artifact@v4
+        with:
+          name: Deneme-APK
           path: build/apk/app-release.apk
