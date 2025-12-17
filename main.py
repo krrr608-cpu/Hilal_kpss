@@ -7,7 +7,10 @@ def main(page: ft.Page):
     # --- AYARLAR ---
     page.padding = 0
     page.spacing = 0
-    ana_liste = ft.ListView(expand=True, spacing=0, padding=0)
+    
+    # DÜZELTME 1: Çentik (Bildirim) Payı
+    # top=50 yaparak içeriği aşağı ittik, artık geri tuşu bildirimle çakışmaz.
+    ana_liste = ft.ListView(expand=True, spacing=0, padding=ft.padding.only(top=50, bottom=20))
     page.add(ana_liste)
 
     # LİNKİN AYNI
@@ -17,7 +20,7 @@ def main(page: ft.Page):
     veriler = {}
     kategoriler = []
     
-    # Hafıza Listeleri
+    # Hafıza
     cozulen_sorular = [] 
     hatali_sorular = []
     
@@ -29,7 +32,7 @@ def main(page: ft.Page):
     yanlis_sayisi = 0
     durum_mesaji = "Yükleniyor..."
     
-    # Oturumdaki cevapları tutmak için (Geri dönünce cevabı hatırlasın)
+    # Oturum Cevapları
     oturum_cevaplari = {} 
 
     # --- VERİ VE HAFIZA YÖNETİMİ ---
@@ -40,12 +43,12 @@ def main(page: ft.Page):
             response = urllib.request.urlopen(URL, timeout=3)
             data_str = response.read().decode('utf-8')
             veriler = json.loads(data_str)
-            page.client_storage.set("kpss_v5_data", data_str)
+            page.client_storage.set("kpss_v6_data", data_str)
             durum_mesaji = "Online ✅"
         except:
             durum_mesaji = "Offline 📂"
-            if page.client_storage.contains_key("kpss_v5_data"):
-                try: veriler = json.loads(page.client_storage.get("kpss_v5_data"))
+            if page.client_storage.contains_key("kpss_v6_data"):
+                try: veriler = json.loads(page.client_storage.get("kpss_v6_data"))
                 except: veriler = {}
             else: veriler = {}
         
@@ -75,7 +78,7 @@ def main(page: ft.Page):
         header = ft.Container(
             content=ft.Column([
                 ft.Text(baslik, size=24, weight="bold", color="white"),
-                ft.Text("Kategoriyi açmak için BASILI TUTUN", color="white70", size=12, italic=True),
+                ft.Text("Başlamak için kategoriye tıklayın", color="white70", size=12), # Yazıyı güncelledik
                 ft.Text(durum_mesaji, color="white30", size=10)
             ], horizontal_alignment="center"),
             bgcolor=ana_renk, padding=30, width=1000,
@@ -95,7 +98,7 @@ def main(page: ft.Page):
                     ft.Text(f"{len(hatali_sorular)} Soru", color="white70", size=12)
                 ], horizontal_alignment="center"),
                 bgcolor="red", padding=15, border_radius=10, width=160,
-                on_long_press=lambda _: ozel_testi_baslat("hatalar"),
+                on_click=lambda _: ozel_testi_baslat("hatalar"), # DÜZELTME: Normal Tıklama
                 ink=True
             )
             ozel_butonlar.controls.append(btn_hata)
@@ -108,7 +111,7 @@ def main(page: ft.Page):
                     ft.Text(f"{len(cozulen_sorular)} Soru", color="white70", size=12)
                 ], horizontal_alignment="center"),
                 bgcolor="green", padding=15, border_radius=10, width=160,
-                on_long_press=lambda _: ozel_testi_baslat("cozulenler"),
+                on_click=lambda _: ozel_testi_baslat("cozulenler"), # DÜZELTME: Normal Tıklama
                 ink=True
             )
             ozel_butonlar.controls.append(btn_cozulen)
@@ -137,7 +140,8 @@ def main(page: ft.Page):
                 padding=20, margin=ft.margin.symmetric(horizontal=20, vertical=10),
                 border_radius=15,
                 shadow=ft.BoxShadow(blur_radius=5, color=ft.colors.with_opacity(0.2, "black")),
-                on_long_press=lambda e, k=kat, s=cozulmemis_sorular: ders_testini_baslat(k, s),
+                # DÜZELTME: Normal Tıklama (En serisi budur)
+                on_click=lambda e, k=kat, s=cozulmemis_sorular: ders_testini_baslat(k, s),
                 ink=True
             )
             ana_liste.controls.append(kart)
@@ -179,10 +183,10 @@ def main(page: ft.Page):
         toplam_puan = 0
         dogru_sayisi = 0
         yanlis_sayisi = 0
-        oturum_cevaplari = {} # Oturum cevaplarını sıfırla
+        oturum_cevaplari = {}
         test_ekranini_ciz(renk, baslik, mod)
 
-    # --- 2. EKRAN: TEST ARAYÜZÜ (GÜNCELLENDİ) ---
+    # --- 2. EKRAN: TEST ARAYÜZÜ ---
     def test_ekranini_ciz(renk, baslik, mod):
         ana_liste.controls.clear()
         
@@ -193,6 +197,7 @@ def main(page: ft.Page):
         # Üst Bar
         ust_bar = ft.Container(
             content=ft.Row([
+                # Geri tuşu artık aşağıda olduğu için rahat basılır
                 ft.IconButton(ft.icons.ARROW_BACK, icon_color="white", on_click=lambda _: ana_menuyu_ciz()),
                 ft.Text(f"{baslik}", color="white", size=16, weight="bold"),
                 ft.Text(f"P: {toplam_puan}", color="white")
@@ -201,7 +206,7 @@ def main(page: ft.Page):
         )
         ana_liste.controls.append(ust_bar)
         
-        # NAVİGASYON (GEÇİŞ) BAR
+        # NAVİGASYON
         soru_secenekleri = []
         for i in range(len(aktif_sorular)):
             durum_ikon = ""
@@ -211,19 +216,20 @@ def main(page: ft.Page):
 
         nav_bar = ft.Container(
             content=ft.Row([
-                ft.ElevatedButton("< Önceki", on_click=lambda _: soru_degistir(-1, renk, baslik, mod), disabled=(mevcut_index==0), color=renk),
+                ft.ElevatedButton("<", on_click=lambda _: soru_degistir(-1, renk, baslik, mod), disabled=(mevcut_index==0), color=renk, width=50),
                 ft.Dropdown(
-                    width=150,
+                    width=180,
                     options=soru_secenekleri,
                     value=str(mevcut_index),
                     on_change=lambda e: soruya_git(int(e.control.value), renk, baslik, mod),
-                    text_size=12,
+                    text_size=13,
                     content_padding=5,
                     filled=True,
-                    bgcolor="white"
+                    bgcolor="white",
+                    hint_text="Soruya Git"
                 ),
-                ft.ElevatedButton("Sonraki >", on_click=lambda _: soru_degistir(1, renk, baslik, mod), disabled=(mevcut_index==len(aktif_sorular)-1), color=renk),
-            ], alignment="center", spacing=10),
+                ft.ElevatedButton(">", on_click=lambda _: soru_degistir(1, renk, baslik, mod), disabled=(mevcut_index==len(aktif_sorular)-1), color=renk, width=50),
+            ], alignment="center", spacing=5),
             padding=10, bgcolor="#e0e0e0"
         )
         ana_liste.controls.append(nav_bar)
@@ -240,12 +246,9 @@ def main(page: ft.Page):
 
         # Şıklar
         siklar_grubu = ft.Column()
-        
-        # Bu soru daha önce çözüldü mü kontrol et
         cozulmus_mu = mevcut_index in oturum_cevaplari
         
         for sec in soru["secenekler"]:
-            # Eğer çözüldüyse renkleri ayarla
             btn_renk = "white"
             yazi_renk = "black"
             border_renk = renk
@@ -256,7 +259,6 @@ def main(page: ft.Page):
                     btn_renk = ft.colors.GREEN_100
                     border_renk = "green"
                 elif oturum_cevaplari[mevcut_index] == "yanlis" and sec != dogru_cvp:
-                    # Yanlış çözdüyse ve bu şık o yanlış şıksa (bunu basit tutmak için sadece doğruyu gösteriyoruz)
                     pass
 
             btn = ft.Container(
@@ -269,7 +271,6 @@ def main(page: ft.Page):
             siklar_grubu.controls.append(btn)
         ana_liste.controls.append(siklar_grubu)
         
-        # Alt Boşluk
         ana_liste.controls.append(ft.Container(height=50))
         page.update()
 
@@ -289,8 +290,6 @@ def main(page: ft.Page):
         soru_metni = aktif_sorular[mevcut_index]["metin"]
         dogru_cvp = aktif_sorular[mevcut_index]["cevap"]
         tiklanan = e.control
-        
-        # Oturum kaydı
         sonuc = ""
 
         if secilen == dogru_cvp:
@@ -310,11 +309,10 @@ def main(page: ft.Page):
             if soru_metni not in hatali_sorular: hatali_sorular.append(soru_metni)
             if soru_metni in cozulen_sorular: cozulen_sorular.remove(soru_metni)
 
-        oturum_cevaplari[mevcut_index] = sonuc # Bu sorunun durumunu kaydet
+        oturum_cevaplari[mevcut_index] = sonuc
         page.client_storage.set("cozulenler", cozulen_sorular)
         page.client_storage.set("hatalar", hatali_sorular)
 
-        # Kilitle
         for btn in grup.controls:
             btn.on_click = None
             if btn.content.value == dogru_cvp:
@@ -322,9 +320,6 @@ def main(page: ft.Page):
                 btn.border = ft.border.all(2, "green")
             btn.update()
         
-        # Otomatik geçiş yerine navigasyonu kullanıyoruz ama bir süre sonra geçsin istersek:
-        # await asyncio.sleep(1) -> sonraki_soru() yapılabilir. 
-        # Şimdilik kullanıcı "Sonraki" butonuna basmalı.
         page.update()
 
     ana_menuyu_ciz()
