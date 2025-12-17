@@ -1,0 +1,12 @@
+[
+  {
+    "metin": "İnternetten gelen soru 1: Paragrafın ana düşüncesi nedir?",
+    "secenekler": ["A Şıkkı", "B Şıkkı", "C Şıkkı", "D Şıkkı", "E Şıkkı"],
+    "cevap": "A Şıkkı"
+  },
+  {
+    "metin": "İnternetten gelen soru 2: Bu parçadan hangisi çıkarılamaz?",
+    "secenekler": ["X Şıkkı", "Y Şıkkı", "Z Şıkkı", "T Şıkkı", "K Şıkkı"],
+    "cevap": "Z Şıkkı"
+  }
+]
