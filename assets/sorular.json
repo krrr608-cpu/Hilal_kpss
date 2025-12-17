@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "metin": "İnsan, düşünen bir varlık olmasının yanında, hisseden de bir canlıdır. Sadece mantık süzgecinden geçen kararlar her zaman insanı mutlu etmeyebilir. Bu parçada asıl anlatılmak istenen nedir?",
+    "secenekler": ["Mantık her zaman duygudan üstündür.", "Duygular karar almada mantık kadar önemlidir.", "İnsan sadece düşünen bir varlıktır.", "Mutluluk sadece mantıklı kararlarla gelir.", "Karmaşık problemler çözümsüzdür."],
+    "dogru_cevap": "Duygular karar almada mantık kadar önemlidir."
+  },
+  {
+    "id": 2,
+    "metin": "Tarih boyunca medeniyetler su kenarlarında kurulmuştur. Nil, Fırat, Dicle gibi nehirler sadece tarım için değil, ticaret ve ulaşım için de hayati önem taşımıştır. Bu parçaya göre hangisi söylenemez?",
+    "secenekler": ["Su hayati önem taşır.", "Nehirler ticareti geliştirir.", "Medeniyetler dağ başlarına kurulmuştur.", "Tarım için su gereklidir.", "Ulaşım nehirlerle sağlanabilir."],
+    "dogru_cevap": "Medeniyetler dağ başlarına kurulmuştur."
+  }
+]
