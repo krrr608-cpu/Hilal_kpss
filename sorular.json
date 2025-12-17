@@ -527,7 +527,258 @@
           "metin": "100. Türkiye ile Avrupa Birliği arasında Gümrük Birliği hangi yıl yürürlüğe girmiştir?",
           "secenekler": ["1996", "1990", "1999", "2005"],
           "cevap": "1996"
+        },
+                {
+          "metin": "101. II. Dünya Savaşı'ndan sonra kurulan Birleşmiş Milletler'in (BM) merkezi neresidir?",
+          "secenekler": ["New York", "Cenevre", "Brüksel", "Paris"],
+          "cevap": "New York"
+        },
+        {
+          "metin": "102. Birleşmiş Milletler Güvenlik Konseyi'nde veto hakkı bulunan 5 daimi üyeden biri hangisi 'değildir'?",
+          "secenekler": ["Almanya", "ABD", "Rusya", "Çin"],
+          "cevap": "Almanya"
+        },
+        {
+          "metin": "103. 'Demir Perde' tabirini ilk kez kullanan İngiliz devlet adamı kimdir?",
+          "secenekler": ["Winston Churchill", "Clement Attlee", "Neville Chamberlain", "Tony Blair"],
+          "cevap": "Winston Churchill"
+        },
+        {
+          "metin": "104. İsrail Devleti hangi yıl kurulmuştur?",
+          "secenekler": ["1948", "1945", "1950", "1967"],
+          "cevap": "1948"
+        },
+        {
+          "metin": "105. Filistin Kurtuluş Örgütü'nün (FKÖ) efsanevi lideri kimdir?",
+          "secenekler": ["Yaser Arafat", "Mahmud Abbas", "Şeyh Ahmet Yasin", "Halid Meşal"],
+          "cevap": "Yaser Arafat"
+        },
+        {
+          "metin": "106. Hindistan'ın bağımsızlık hareketinin lideri ve 'Mahatma' (Yüce Ruh) lakaplı kişi kimdir?",
+          "secenekler": ["Gandhi", "Nehru", "Cinnah", "İndira Gandhi"],
+          "cevap": "Gandhi"
+        },
+        {
+          "metin": "107. Pakistan'ın kurucusu ve ilk devlet başkanı kimdir?",
+          "secenekler": ["Muhammed Ali Cinnah", "Zülfikar Ali Butto", "Benazir Butto", "Pervez Müşerref"],
+          "cevap": "Muhammed Ali Cinnah"
+        },
+        {
+          "metin": "108. Güney Afrika Cumhuriyeti'nde ırkçılığa (Apartheid) karşı mücadele eden ve ülkenin ilk siyahi devlet başkanı olan lider kimdir?",
+          "secenekler": ["Nelson Mandela", "Desmond Tutu", "Kofi Annan", "Barack Obama"],
+          "cevap": "Nelson Mandela"
+        },
+        {
+          "metin": "109. Küba Devrimi'nin lideri kimdir?",
+          "secenekler": ["Fidel Castro", "Che Guevara", "Hugo Chavez", "Simon Bolivar"],
+          "cevap": "Fidel Castro"
+        },
+        {
+          "metin": "110. İran'da 1979 İslam Devrimi'ni gerçekleştiren lider kimdir?",
+          "secenekler": ["Ayetullah Humeyni", "Şah Rıza Pehlevi", "Muhammed Musaddık", "Hasan Ruhani"],
+          "cevap": "Ayetullah Humeyni"
+        },
+        {
+          "metin": "111. Sovyetler Birliği'nin son lideri olan, 'Glasnost' ve 'Perestroika' politikalarını uygulayan kişi kimdir?",
+          "secenekler": ["Mihail Gorbaçov", "Boris Yeltsin", "Vladimir Putin", "Brejnev"],
+          "cevap": "Mihail Gorbaçov"
+        },
+        {
+          "metin": "112. ABD'nin uzay programı NASA tarafından Ay'a ilk insan indiren projenin adı nedir?",
+          "secenekler": ["Apollo 11", "Sputnik", "Gemini", "Mercury"],
+          "cevap": "Apollo 11"
+        },
+        {
+          "metin": "113. Ay'a ayak basan ilk insan kimdir?",
+          "secenekler": ["Neil Armstrong", "Yuri Gagarin", "Buzz Aldrin", "Michael Collins"],
+          "cevap": "Neil Armstrong"
+        },
+        {
+          "metin": "114. Uzaya giden ilk insan kimdir?",
+          "secenekler": ["Yuri Gagarin", "Neil Armstrong", "Valentina Tereşkova", "John Glenn"],
+          "cevap": "Yuri Gagarin"
+        },
+        {
+          "metin": "115. Türkiye'nin ilk yerli otomobili 'Devrim' hangi yıl üretilmiştir?",
+          "secenekler": ["1961", "1950", "1971", "1923"],
+          "cevap": "1961"
+        },
+        {
+          "metin": "116. Kıbrıs Barış Harekatı'nda (1974) düşürülen uçağımızın pilotu olan şehit yüzbaşımız kimdir?",
+          "secenekler": ["Cengiz Topel", "Gökçen Efe", "Vecihi Hürkuş", "Sabiha Gökçen"],
+          "cevap": "Cengiz Topel"
+        },
+        {
+          "metin": "117. Dünyanın en büyük arama motoru Google hangi yıl kurulmuştur?",
+          "secenekler": ["1998", "1990", "2000", "1985"],
+          "cevap": "1998"
+        },
+        {
+          "metin": "118. Kyoto Protokolü'nün temel amacı nedir?",
+          "secenekler": ["Sera gazı salınımını azaltmak", "Nükleer silahları yasaklamak", "Serbest ticareti geliştirmek", "Mülteci sorununu çözmek"],
+          "cevap": "Sera gazı salınımını azaltmak"
+        },
+        {
+          "metin": "119. Arap Baharı (2010) hangi ülkede başlamıştır?",
+          "secenekler": ["Tunus", "Mısır", "Libya", "Suriye"],
+          "cevap": "Tunus"
+        },
+        {
+          "metin": "120. Türkiye'nin 'Mavi Vatan' doktrini hangi alanla ilgilidir?",
+          "secenekler": ["Deniz yetki alanları", "Hava sahası", "Kara sınırları", "Uzay çalışmaları"],
+          "cevap": "Deniz yetki alanları"
+        },
+        {
+          "metin": "121. Avrupa Birliği'nin (AB) ortak para birimi nedir?",
+          "secenekler": ["Euro", "Dolar", "Sterlin", "Mark"],
+          "cevap": "Euro"
+        },
+        {
+          "metin": "122. İngiltere'nin Avrupa Birliği'nden ayrılma sürecine ne ad verilir?",
+          "secenekler": ["Brexit", "Grexit", "Nexit", "Frexit"],
+          "cevap": "Brexit"
+        },
+        {
+          "metin": "123. Türk Cumhuriyetleri arasında kültürel işbirliğini sağlayan uluslararası kuruluş hangisidir?",
+          "secenekler": ["TÜRKSOY", "TİKA", "KEİ", "ECO"],
+          "cevap": "TÜRKSOY"
+        },
+        {
+          "metin": "124. 'Yüzyılın Anlaşması' olarak bilinen Bakü-Tiflis-Ceyhan (BTC) boru hattı ne taşır?",
+          "secenekler": ["Petrol", "Doğalgaz", "Su", "Elektrik"],
+          "cevap": "Petrol"
+        },
+        {
+          "metin": "125. Nobel Edebiyat Ödülü'nü kazanan ilk ve tek Türk yazarımız kimdir?",
+          "secenekler": ["Orhan Pamuk", "Yaşar Kemal", "Aziz Nesin", "Elif Şafak"],
+          "cevap": "Orhan Pamuk"
+        },
+        {
+          "metin": "126. Nobel Kimya Ödülü'nü kazanan Türk bilim insanımız kimdir?",
+          "secenekler": ["Aziz Sancar", "Cahit Arf", "Oktay Sinanoğlu", "Gazi Yaşargil"],
+          "cevap": "Aziz Sancar"
+        },
+        {
+          "metin": "127. 'Naim Süleymanoğlu' hangi spor dalında dünya rekorları kırmış efsanevi sporcumuzdur?",
+          "secenekler": ["Halter", "Güreş", "Boks", "Atletizm"],
+          "cevap": "Halter"
+        },
+        {
+          "metin": "128. Türk parasından 6 sıfır hangi yıl atılmıştır?",
+          "secenekler": ["2005", "2001", "2010", "1995"],
+          "cevap": "2005"
+        },
+        {
+          "metin": "129. Türkiye'nin ilk yüksek hızlı tren (YHT) hattı hangi iller arasında açılmıştır?",
+          "secenekler": ["Ankara-Eskişehir", "Ankara-İstanbul", "Ankara-Konya", "İstanbul-Konya"],
+          "cevap": "Ankara-Eskişehir"
+        },
+        {
+          "metin": "130. Marmaray Projesi ile Asya ve Avrupa kıtaları hangi yöntemle birleştirilmiştir?",
+          "secenekler": ["Deniz altı tüp geçit", "Asma köprü", "Vapur hattı", "Teleferik"],
+          "cevap": "Deniz altı tüp geçit"
+        },
+        {
+          "metin": "131. GAP (Güneydoğu Anadolu Projesi) kapsamında yapılan Türkiye'nin en büyük barajı hangisidir?",
+          "secenekler": ["Atatürk Barajı", "Keban Barajı", "Karakaya Barajı", "Ilısu Barajı"],
+          "cevap": "Atatürk Barajı"
+        },
+        {
+          "metin": "132. 'Fırat Kalkanı', 'Zeytin Dalı' ve 'Barış Pınarı' harekatları hangi ülkedeki terör unsurlarına karşı yapılmıştır?",
+          "secenekler": ["Suriye", "Irak", "Libya", "Azerbaycan"],
+          "cevap": "Suriye"
+        },
+        {
+          "metin": "133. 15 Temmuz 2016 darbe girişiminde sembol haline gelen ve adını bir köprüye veren şehidimiz kimdir?",
+          "secenekler": ["Ömer Halisdemir", "Fethi Sekin", "Erol Olçok", "Halil Kantarcı"],
+          "cevap": "Ömer Halisdemir"
+        },
+        {
+          "metin": "134. Türkiye'nin ilk sondaj gemisinin adı nedir?",
+          "secenekler": ["Fatih", "Yavuz", "Kanuni", "Abdülhamid Han"],
+          "cevap": "Fatih"
+        },
+        {
+          "metin": "135. Karadeniz'de keşfedilen büyük doğalgaz rezervi hangi kuyuda bulunmuştur?",
+          "secenekler": ["Tuna-1", "Sakarya-1", "Amasra-1", "Türkali-1"],
+          "cevap": "Tuna-1"
+        },
+        {
+          "metin": "136. UNESCO Dünya Mirası Listesi'nde yer alan 'Göbeklitepe' hangi ilimizdedir?",
+          "secenekler": ["Şanlıurfa", "Gaziantep", "Mardin", "Diyarbakır"],
+          "cevap": "Şanlıurfa"
+        },
+        {
+          "metin": "137. Çin'in Wuhan kentinde ortaya çıkan ve dünyayı etkisi altına alan salgın hastalık hangisidir?",
+          "secenekler": ["Covid-19", "SARS", "MERS", "Ebola"],
+          "cevap": "Covid-19"
+        },
+        {
+          "metin": "138. Azerbaycan'ın Ermenistan işgalinden kurtardığı, 'Karabağ'ın Kalbi' olarak bilinen şehir neresidir?",
+          "secenekler": ["Şuşa", "Laçın", "Kelbecer", "Ağdam"],
+          "cevap": "Şuşa"
+        },
+        {
+          "metin": "139. 2020 Tokyo Olimpiyatları'nda okçuluk dalında altın madalya kazanarak tarih yazan sporcumuz kimdir?",
+          "secenekler": ["Mete Gazoz", "Rıza Kayaalp", "Busenaz Sürmeneli", "Ferhat Arıcan"],
+          "cevap": "Mete Gazoz"
+        },
+        {
+          "metin": "140. Türkiye'nin ürettiği yerli ve milli SİHA'ların (Silahlı İnsansız Hava Aracı) en bilinen markası hangisidir?",
+          "secenekler": ["Bayraktar TB2", "Anka", "Akıncı", "Aksungur"],
+          "cevap": "Bayraktar TB2"
+        },
+        {
+          "metin": "141. Dünyanın 'yedi harikası'ndan biri olan ve Türkiye'de (Bodrum) bulunan eser hangisidir?",
+          "secenekler": ["Halikarnas Mozolesi", "Keops Piramidi", "Babil'in Asma Bahçeleri", "Zeus Heykeli"],
+          "cevap": "Halikarnas Mozolesi"
+        },
+        {
+          "metin": "142. İstiklal Marşı'mızın şairi Mehmet Akif Ersoy, marşı nerede yazmıştır?",
+          "secenekler": ["Tacettin Dergahı", "TBMM", "Sultanahmet Camii", "Mısır"],
+          "cevap": "Tacettin Dergahı"
+        },
+        {
+          "metin": "143. Türkiye'nin en büyük adası hangisidir?",
+          "secenekler": ["Gökçeada", "Bozcaada", "Marmara Adası", "Avşa Adası"],
+          "cevap": "Gökçeada"
+        },
+        {
+          "metin": "144. 'Mevlana' denilince akla gelen şehrimiz hangisidir?",
+          "secenekler": ["Konya", "Karaman", "Bursa", "İstanbul"],
+          "cevap": "Konya"
+        },
+        {
+          "metin": "145. Türkiye'nin en çok yağış alan bölgesi hangisidir?",
+          "secenekler": ["Karadeniz", "Akdeniz", "Ege", "Marmara"],
+          "cevap": "Karadeniz"
+        },
+        {
+          "metin": "146. Türkiye'de 'Güneşin doğuşunun ve batışının en güzel izlendiği yer' olarak bilinen Nemrut Dağı hangi ilimizdedir?",
+          "secenekler": ["Adıyaman", "Bitlis", "Malatya", "Şanlıurfa"],
+          "cevap": "Adıyaman"
+        },
+        {
+          "metin": "147. 'Pamukkale Travertenleri' hangi ilimizdedir?",
+          "secenekler": ["Denizli", "Antalya", "Muğla", "Afyon"],
+          "cevap": "Denizli"
+        },
+        {
+          "metin": "148. Türkiye'nin NATO bünyesinde Kore'den sonra asker gönderdiği ikinci ülke (1990'larda) neresidir?",
+          "secenekler": ["Somali", "Afganistan", "Bosna-Hersek", "Kosova"],
+          "cevap": "Somali"
+        },
+        {
+          "metin": "149. Şanghay İşbirliği Örgütü'nün (ŞİÖ) kurucuları arasında hangisi yoktur?",
+          "secenekler": ["Türkiye", "Çin", "Rusya", "Kazakistan"],
+          "cevap": "Türkiye"
+        },
+        {
+          "metin": "150. G-20 ülkeleri neyi temsil eder?",
+          "secenekler": ["Dünyanın en büyük 20 ekonomisini", "En kalabalık 20 ülkeyi", "En geniş yüzölçümlü 20 ülkeyi", "En çok silahlanan 20 ülkeyi"],
+          "cevap": "Dünyanın en büyük 20 ekonomisini"
         }
+          
         
       ]
     },
