@@ -4,213 +4,226 @@ import urllib.request
 import asyncio
 
 def main(page: ft.Page):
-    # --- VARSAYILAN AYARLAR ---
-    DEFAULT_VERI = {
-        "ayarlar": {
-            "baslik": "KPSS", 
-            "tema_rengi": "blue", 
-            "arka_plan_rengi": "white"
-        },
-        "tasarim": {
-            "buton_yuvarlakligi": 10,
-            "soru_yazi_boyutu": 18,
-            "sik_yazi_boyutu": 16,
-            "baslik_ortala": True,
-            "golge_olsun_mu": False
-        },
-        "sorular": []
-    }
-    
-    # Güvenli Mod
+    # --- AYARLAR ---
     page.padding = 0
     page.spacing = 0
     ana_liste = ft.ListView(expand=True, spacing=0, padding=0)
     page.add(ana_liste)
 
-    # --- LİNKİN BURADA ---
+    # LİNKİNİ BURAYA YAPIŞTIR
     URL = "https://raw.githubusercontent.com/krrr608-cpu/kpss-uygulama/refs/heads/main/sorular.json"
-    
+
+    # Global Değişkenler
     veriler = {}
-    durum_mesaji = ""
+    kategoriler = []
+    aktif_sorular = []
     
-    try:
-        response = urllib.request.urlopen(URL, timeout=3)
-        data_str = response.read().decode('utf-8')
-        veriler = json.loads(data_str)
-        page.client_storage.set("kpss_final_v2", data_str)
-        durum_mesaji = "Güncel (Online) ✅"
-    except:
-        durum_mesaji = "Offline Mod 📂"
-        if page.client_storage.contains_key("kpss_final_v2"):
-            try: veriler = json.loads(page.client_storage.get("kpss_final_v2"))
-            except: veriler = DEFAULT_VERI
-        else: veriler = DEFAULT_VERI
-
-    # --- VERİLERİ AYIKLA ---
-    sorular = veriler.get("sorular", [])
-    genel_ayar = {**DEFAULT_VERI["ayarlar"], **veriler.get("ayarlar", {})}
-    tasarim = {**DEFAULT_VERI["tasarim"], **veriler.get("tasarim", {})}
-
-    # --- TASARIM DEĞİŞKENLERİ ---
-    BASLIK = genel_ayar.get("baslik")
-    RENK = genel_ayar.get("tema_rengi")
-    BG_RENK = genel_ayar.get("arka_plan_rengi")
-    RADIUS = tasarim.get("buton_yuvarlakligi", 10)
-    FONT_SORU = tasarim.get("soru_yazi_boyutu", 18)
-    FONT_SIK = tasarim.get("sik_yazi_boyutu", 16)
-    ORTALA = ft.MainAxisAlignment.CENTER if tasarim.get("baslik_ortala") else ft.MainAxisAlignment.START
-    GOLGE = ft.BoxShadow(blur_radius=10, color=ft.colors.with_opacity(0.1, "black")) if tasarim.get("golge_olsun_mu") else None
-
-    page.bgcolor = BG_RENK
-    page.title = BASLIK
-
-    # Değişkenler
+    # Oyun Değişkenleri
     mevcut_index = 0
     toplam_puan = 0
     dogru = 0
     yanlis = 0
-    kalan_sure = genel_ayar.get("toplam_sure_dakika", 0) * 60
-    sure_var = genel_ayar.get("sure_var_mi", False)
+    durum_mesaji = "Yükleniyor..."
 
-    # --- ARAYÜZ ---
-    txt_baslik = ft.Text(BASLIK, size=20, weight="bold", color="white")
-    txt_bilgi = ft.Text(durum_mesaji, color="white70", size=12)
-    txt_puan = ft.Text("Puan: 0", color="white")
-    txt_sure = ft.Text("", color="white", weight="bold")
+    # --- VERİ ÇEKME FONKSİYONU ---
+    def verileri_guncelle():
+        nonlocal veriler, kategoriler, durum_mesaji
+        try:
+            response = urllib.request.urlopen(URL, timeout=3)
+            data_str = response.read().decode('utf-8')
+            veriler = json.loads(data_str)
+            page.client_storage.set("kpss_kategori_v1", data_str)
+            durum_mesaji = "Veriler Güncel (Online) ✅"
+        except:
+            durum_mesaji = "Offline Mod 📂"
+            if page.client_storage.contains_key("kpss_kategori_v1"):
+                try: veriler = json.loads(page.client_storage.get("kpss_kategori_v1"))
+                except: veriler = {}
+            else: veriler = {}
+        
+        kategoriler = veriler.get("kategoriler", [])
+        
+        # Genel Ayarları Uygula
+        ayarlar = veriler.get("ayarlar", {})
+        page.title = ayarlar.get("baslik", "KPSS")
+        page.bgcolor = ayarlar.get("arka_plan_rengi", "#f3f4f6")
+        page.update()
 
-    header = ft.Container(
-        content=ft.Column([
-            ft.Row([txt_baslik], alignment=ORTALA),
-            ft.Row([txt_bilgi], alignment=ORTALA),
-            ft.Row([txt_sure, txt_puan], alignment="spaceBetween")
-        ]),
-        bgcolor=RENK,
-        padding=20,
-        border_radius=ft.border_radius.only(bottom_left=RADIUS, bottom_right=RADIUS)
-    )
-
-    async def zamanlayici():
-        nonlocal kalan_sure
-        while kalan_sure > 0 and sure_var:
-            dk, sn = divmod(kalan_sure, 60)
-            txt_sure.value = f"{dk:02d}:{sn:02d}"
-            txt_sure.update()
-            kalan_sure -= 1
-            await asyncio.sleep(1)
-        if sure_var and kalan_sure <= 0:
-            txt_sure.value = "SÜRE BİTTİ"
-            txt_sure.update()
-
-    def ciz():
-        nonlocal mevcut_index
+    # --- 1. EKRAN: ANA MENÜ (KATEGORİLER) ---
+    def ana_menuyu_ciz():
         ana_liste.controls.clear()
+        
+        # Başlık Alanı
+        ayarlar = veriler.get("ayarlar", {})
+        baslik = ayarlar.get("baslik", "KPSS")
+        ana_renk = ayarlar.get("tema_rengi", "blue")
+        
+        header = ft.Container(
+            content=ft.Column([
+                ft.Text(baslik, size=24, weight="bold", color="white"),
+                ft.Text("Lütfen bir ders seçiniz", color="white70"),
+                ft.Text(durum_mesaji, color="white30", size=10)
+            ], horizontal_alignment="center"),
+            bgcolor=ana_renk,
+            padding=30,
+            width=1000,
+            border_radius=ft.border_radius.only(bottom_left=20, bottom_right=20)
+        )
         ana_liste.controls.append(header)
         ana_liste.controls.append(ft.Container(height=20))
 
-        if not sorular:
-            ana_liste.controls.append(ft.Text("Soru Yok", color="red", text_align="center"))
-            page.update()
-            return
-
-        if mevcut_index < len(sorular):
-            soru = sorular[mevcut_index]
+        if not kategoriler:
+            ana_liste.controls.append(ft.Text("Kategori Bulunamadı!", color="red", text_align="center"))
+            # Yenile Butonu
+            ana_liste.controls.append(
+                ft.Container(
+                    content=ft.ElevatedButton("Tekrar Dene", on_click=lambda _: baslat()),
+                    alignment=ft.alignment.center, padding=20
+                )
+            )
+        
+        # Kategorileri Listele
+        for kat in kategoriler:
+            # Kategori Kartı
+            kart = ft.Container(
+                content=ft.Row([
+                    ft.Icon(name=kat.get("ikon", "book"), size=40, color="white"),
+                    ft.Column([
+                        ft.Text(kat.get("ad"), size=20, weight="bold", color="white"),
+                        ft.Text(f"{len(kat.get('sorular', []))} Soru", color="white70")
+                    ], spacing=2)
+                ], alignment="start"),
+                bgcolor=kat.get("renk", "blue"), # Her dersin kendi rengi
+                padding=20,
+                margin=ft.margin.symmetric(horizontal=20, vertical=10),
+                border_radius=15,
+                shadow=ft.BoxShadow(blur_radius=5, color=ft.colors.with_opacity(0.2, "black")),
+                on_click=lambda e, k=kat: testi_baslat(k), # Tıklanınca o dersi başlat
+                ink=True
+            )
+            ana_liste.controls.append(kart)
             
-            # Soru
+        page.update()
+
+    # --- 2. EKRAN: TEST EKRANI ---
+    def testi_baslat(secilen_kategori):
+        nonlocal aktif_sorular, mevcut_index, toplam_puan, dogru, yanlis
+        
+        aktif_sorular = secilen_kategori.get("sorular", [])
+        mevcut_index = 0
+        toplam_puan = 0
+        dogru = 0
+        yanlis = 0
+        
+        # O anki dersin rengini al
+        test_rengi = secilen_kategori.get("renk", "blue")
+        
+        test_ekranini_ciz(test_rengi, secilen_kategori.get("ad"))
+
+    def test_ekranini_ciz(renk, ders_adi):
+        ana_liste.controls.clear()
+        
+        tasarim = veriler.get("tasarim", {})
+        RADIUS = tasarim.get("buton_yuvarlakligi", 10)
+        FONT_SORU = tasarim.get("soru_yazi_boyutu", 18)
+        
+        # Üst Bilgi Çubuğu
+        ust_bar = ft.Container(
+            content=ft.Row([
+                ft.IconButton(ft.icons.ARROW_BACK, icon_color="white", on_click=lambda _: ana_menuyu_ciz()),
+                ft.Text(f"{ders_adi} - Soru {mevcut_index + 1}/{len(aktif_sorular)}", color="white", size=18, weight="bold"),
+                ft.Text(f"P: {toplam_puan}", color="white")
+            ], alignment="spaceBetween"),
+            bgcolor=renk,
+            padding=15
+        )
+        ana_liste.controls.append(ust_bar)
+        ana_liste.controls.append(ft.Container(height=10))
+
+        if mevcut_index < len(aktif_sorular):
+            soru = aktif_sorular[mevcut_index]
+            
+            # Soru Metni
             ana_liste.controls.append(
                 ft.Container(
                     content=ft.Text(soru["metin"], size=FONT_SORU, color="black"),
-                    bgcolor="white", padding=20, margin=10, border_radius=RADIUS, shadow=GOLGE
+                    bgcolor="white", padding=20, margin=10, border_radius=RADIUS,
+                    shadow=ft.BoxShadow(blur_radius=5, color=ft.colors.with_opacity(0.1, "black"))
                 )
             )
 
-            # Şıkları Gruplamak İçin Kolon
+            # Şıklar
             siklar_grubu = ft.Column()
-
             for sec in soru["secenekler"]:
-                btn_kapsayici = ft.Container(
-                    content=ft.Text(sec, size=FONT_SIK, weight="w500", color="black"),
-                    bgcolor="white",
-                    padding=15,
-                    margin=ft.margin.symmetric(horizontal=15, vertical=5),
-                    border=ft.border.all(1, RENK),
-                    border_radius=RADIUS,
-                    # Tıklama olayına hem seçeneği hem de tüm grubun listesini gönderiyoruz
-                    on_click=lambda e, s=sec, g=siklar_grubu: cevapla(e, s, g),
+                btn = ft.Container(
+                    content=ft.Text(sec, size=16),
+                    bgcolor="white", padding=15, margin=ft.margin.symmetric(horizontal=15, vertical=5),
+                    border=ft.border.all(1, renk), border_radius=RADIUS,
+                    on_click=lambda e, s=sec, g=siklar_grubu, r=renk: cevapla(e, s, g, r, ders_adi),
                     ink=True
                 )
-                siklar_grubu.controls.append(btn_kapsayici)
-            
+                siklar_grubu.controls.append(btn)
             ana_liste.controls.append(siklar_grubu)
-
+            
         else:
-            # Bitiş
+            # Ders Bitti Ekranı
             ana_liste.controls.append(
-                ft.Column([
-                    ft.Text("TEST BİTTİ", size=30, color=RENK, weight="bold"),
-                    ft.Text(f"Toplam Puan: {toplam_puan}", size=20),
-                    ft.Text(f"Doğru: {dogru} | Yanlış: {yanlis}", size=16),
-                    ft.ElevatedButton("Yenile", on_click=lambda _: page.window_reload(), bgcolor=RENK, color="white")
-                ], horizontal_alignment="center", spacing=10)
+                ft.Container(
+                    content=ft.Column([
+                        ft.Icon(ft.icons.CHECK_CIRCLE, size=80, color=renk),
+                        ft.Text(f"{ders_adi} Tamamlandı!", size=24, weight="bold", color=renk),
+                        ft.Text(f"Doğru: {dogru} | Yanlış: {yanlis}", size=18),
+                        ft.Text(f"Toplam Puan: {toplam_puan}", size=20, color="green", weight="bold"),
+                        ft.Container(height=20),
+                        ft.ElevatedButton("Ana Menüye Dön", on_click=lambda _: ana_menuyu_ciz(), bgcolor=renk, color="white", width=200)
+                    ], horizontal_alignment="center"),
+                    alignment=ft.alignment.center, padding=30
+                )
             )
         page.update()
 
-    def cevapla(e, secilen, grup_kolonu):
+    def cevapla(e, secilen, grup, renk, ders_adi):
         nonlocal toplam_puan, dogru, yanlis
-        data = sorular[mevcut_index]
-        dogru_cvp = data.get("cevap") or data.get("dogru_cevap")
+        dogru_cvp = aktif_sorular[mevcut_index]["cevap"]
+        tiklanan = e.control
         
-        tiklanan_kutu = e.control
-        
-        # 1. PUANLAMA
         if secilen == dogru_cvp:
             dogru += 1
-            toplam_puan += genel_ayar.get("puan_dogru", 5)
-            # Doğruysa Yeşil yap
-            tiklanan_kutu.bgcolor = ft.colors.GREEN_100
-            tiklanan_kutu.border = ft.border.all(2, "green")
-            tiklanan_kutu.content.color = "green" # Yazıyı da yeşil yap
+            toplam_puan += 5
+            tiklanan.bgcolor = ft.colors.GREEN_100
+            tiklanan.border = ft.border.all(2, "green")
         else:
             yanlis += 1
-            toplam_puan += genel_ayar.get("puan_yanlis", 0)
-            # Yanlışsa Kırmızı yap
-            tiklanan_kutu.bgcolor = ft.colors.RED_100
-            tiklanan_kutu.border = ft.border.all(2, "red")
-            tiklanan_kutu.content.color = "red"
+            toplam_puan -= 1
+            tiklanan.bgcolor = ft.colors.RED_100
+            tiklanan.border = ft.border.all(2, "red")
 
-        # 2. KİLİTLEME VE DOĞRUYU GÖSTERME (KRİTİK BÖLÜM)
-        for kutu in grup_kolonu.controls:
-            kutu.on_click = None  # Tıklama özelliğini iptal et (Kilitle)
-            kutu.ink = False      # Dalgalanma efektini kapat
+        # Kilitle
+        for btn in grup.controls:
+            btn.on_click = None
+            if btn.content.value == dogru_cvp:
+                btn.bgcolor = ft.colors.GREEN_50
+                btn.border = ft.border.all(2, "green")
+            btn.update()
             
-            # Eğer kullanıcı yanlışı seçtiyse, doğru olan şıkkı bulup yeşil yakalım
-            kutu_icindeki_yazi = kutu.content.value
-            if kutu_icindeki_yazi == dogru_cvp:
-                kutu.bgcolor = ft.colors.GREEN_50
-                kutu.border = ft.border.all(2, "green")
-                kutu.content.color = "green"
-            
-            kutu.update()
-
-        # Puan Güncelle
-        txt_puan.value = f"Puan: {toplam_puan}"
-        header.update()
-        
-        # Devam Butonu
+        # Sonraki butonu
         ana_liste.controls.append(
             ft.Container(
-                content=ft.ElevatedButton("SONRAKİ >", on_click=lambda _: sonraki(), bgcolor=RENK, color="white"),
+                content=ft.ElevatedButton("Devam Et >", on_click=lambda _: sonraki(renk, ders_adi), bgcolor=renk, color="white"),
                 padding=20, alignment=ft.alignment.center
             )
         )
         page.update()
 
-    def sonraki():
+    def sonraki(renk, ders_adi):
         nonlocal mevcut_index
         mevcut_index += 1
-        ciz()
+        test_ekranini_ciz(renk, ders_adi)
 
-    ciz()
-    if sure_var:
-        page.run_task(zamanlayici)
+    def baslat():
+        verileri_guncelle()
+        ana_menuyu_ciz()
+
+    baslat()
 
 ft.app(target=main)
