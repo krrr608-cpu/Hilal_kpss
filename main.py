@@ -1,87 +1,147 @@
 import flet as ft
-
-# --- SORULAR (Aynı sorular) ---
-SORULAR = [
-    {
-        "metin": "İnsan, düşünen bir varlık olmasının yanında, hisseden de bir canlıdır. Sadece mantık süzgecinden geçen kararlar her zaman insanı mutlu etmeyebilir.",
-        "secenekler": ["Mantık her zaman üstündür.", "Duygular karar almada önemlidir.", "İnsan sadece düşünür.", "Mutluluk mantıkla gelir.", "Problemler çözümsüzdür."],
-        "cevap": "Duygular karar almada önemlidir."
-    },
-    {
-        "metin": "Tarih boyunca medeniyetler su kenarlarında kurulmuştur. Nil, Fırat, Dicle gibi nehirler sadece tarım için değil, ticaret ve ulaşım için de hayati önem taşımıştır.",
-        "secenekler": ["Su hayati önem taşır.", "Nehirler ticareti geliştirir.", "Medeniyetler dağlara kurulur.", "Tarım için su gereklidir.", "Ulaşım nehirlerle sağlanır."],
-        "cevap": "Medeniyetler dağlara kurulur."
-    }
-]
+import json
+import urllib.request
 
 def main(page: ft.Page):
-    # --- KRİTİK AYARLAR (Çökmeyi önleyen ayarlar) ---
-    page.title = "KPSS"
-    page.padding = 0  # Kenar boşluğunu sıfırladık
-    # page.scroll komutunu SİLDİK (Çökme sebebi olabilir)
+    # --- AYARLAR ---
+    page.title = "KPSS Online"
+    page.padding = 0
+    page.bgcolor = "#f0f2f5" # Göz yormayan gri ton
     
-    # Elemanları tutacak güvenli liste (ListView mobilde daha stabildir)
-    liste = ft.ListView(expand=True, spacing=10, padding=20)
-    page.add(liste)
+    # GÜVENLİ LİSTE YAPISI (Telefonunda çalışan sistem)
+    ana_liste = ft.ListView(expand=True, spacing=0, padding=0)
+    page.add(ana_liste)
+
+    # --- SORULARI İNTERNETTEN ÇEKME ---
+    # Senin verdiğin linki buraya yerleştirdim 👇
+    URL = "https://raw.githubusercontent.com/krrr608-cpu/kpss-uygulama/refs/heads/main/sorular.json"
+    
+    sorular = []
+    durum_mesaji = ""
+    
+    try:
+        # İnternete bağlan ve dosyayı oku
+        response = urllib.request.urlopen(URL)
+        data = response.read().decode('utf-8')
+        sorular = json.loads(data)
+        durum_mesaji = "Sorular Güncellendi! ✅"
+    except Exception as e:
+        # İnternet yoksa veya hata varsa
+        durum_mesaji = "Bağlantı Hatası! İnterneti kontrol et. ❌"
+        print(e)
+        sorular = [] 
 
     mevcut_index = 0
     dogru_sayisi = 0
     yanlis_sayisi = 0
 
-    # --- ARAYÜZ OLUŞTURUCU ---
     def arayuzu_ciz():
         nonlocal mevcut_index
-        liste.controls.clear() # Ekranı temizle
+        ana_liste.controls.clear()
 
-        if mevcut_index < len(SORULAR):
-            soru = SORULAR[mevcut_index]
+        # Üst Başlık (Mavi Alan)
+        ust_baslik = ft.Container(
+            content=ft.Column([
+                ft.Text("KPSS Paragraf", size=24, weight="bold", color="white"),
+                ft.Text(durum_mesaji, color="white70", size=14)
+            ]),
+            bgcolor=ft.colors.BLUE_700,
+            padding=20,
+            width=1000, # Ekrana yayılması için
+            border_radius=ft.border_radius.only(bottom_left=20, bottom_right=20)
+        )
+        ana_liste.controls.append(ust_baslik)
+        ana_liste.controls.append(ft.Container(height=20))
+
+        # Eğer soru çekilemediyse veya bittiyse kontrolü
+        if len(sorular) == 0:
+             uyari = ft.Container(
+                 content=ft.Text("Soru bulunamadı veya internet yok.\nLütfen internetini açıp tekrar dene.", text_align="center"),
+                 padding=20,
+                 alignment=ft.alignment.center
+             )
+             ana_liste.controls.append(uyari)
+             page.update()
+             return
+
+        if mevcut_index < len(sorular):
+            soru = sorular[mevcut_index]
             
-            # Başlık
-            liste.controls.append(ft.Text(f"SORU {mevcut_index + 1}", size=20, weight="bold", color="blue"))
-            
-            # Soru Metni (Basit Text, Container yok)
-            liste.controls.append(ft.Text(soru["metin"], size=16))
-            liste.controls.append(ft.Divider())
+            # Soru Kartı
+            soru_karti = ft.Container(
+                content=ft.Text(soru["metin"], size=18, color="black87"),
+                bgcolor="white",
+                padding=20,
+                margin=ft.margin.symmetric(horizontal=15),
+                border_radius=15,
+                shadow=ft.BoxShadow(blur_radius=5, color=ft.colors.with_opacity(0.1, "black"))
+            )
+            ana_liste.controls.append(soru_karti)
+            ana_liste.controls.append(ft.Container(height=20))
 
             # Şıklar
             for secenek in soru["secenekler"]:
-                btn = ft.ElevatedButton(
-                    text=secenek,
-                    data=secenek,
-                    on_click=cevap_kontrol,
+                btn = ft.Container(
+                    content=ft.Text(secenek, size=16, color="black"),
                     bgcolor="white",
-                    color="black"
-                    # width, height ve style ayarlarını kaldırdık (Sadelik iyidir)
+                    padding=15,
+                    margin=ft.margin.symmetric(horizontal=15, vertical=5),
+                    border_radius=10,
+                    border=ft.border.all(1, ft.colors.BLUE_100),
+                    on_click=lambda e, s=secenek: cevap_kontrol(e, s),
+                    ink=True
                 )
-                liste.controls.append(btn)
-                
+                ana_liste.controls.append(btn)
+            
+            ana_liste.controls.append(ft.Container(height=50))
+
         else:
             # Bitiş Ekranı
-            liste.controls.append(ft.Text("TEST BİTTİ", size=30, color="green"))
-            liste.controls.append(ft.Text(f"Doğru: {dogru_sayisi}", size=20))
-            liste.controls.append(ft.Text(f"Yanlış: {yanlis_sayisi}", size=20))
+            ana_liste.controls.append(
+                ft.Container(
+                    content=ft.Column([
+                        ft.Icon(ft.icons.EMOJI_EVENTS, size=80, color="orange"),
+                        ft.Text("TEST BİTTİ!", size=30, weight="bold", color="blue"),
+                        ft.Text(f"Doğru: {dogru_sayisi}", size=22, color="green"),
+                        ft.Text(f"Yanlış: {yanlis_sayisi}", size=22, color="red"),
+                        ft.ElevatedButton("Yenile / Güncelle", on_click=lambda _: page.window_reload(), bgcolor="blue", color="white")
+                    ], horizontal_alignment="center"),
+                    alignment=ft.alignment.center,
+                    padding=20
+                )
+            )
             
         page.update()
 
-    def cevap_kontrol(e):
+    def cevap_kontrol(e, secilen_cevap):
         nonlocal dogru_sayisi, yanlis_sayisi
-        secilen = e.control.data
-        dogru = SORULAR[mevcut_index]["cevap"]
-
-        if secilen == dogru:
+        
+        # JSON dosyasındaki anahtar isimlerine dikkat (cevap mı dogru_cevap mı?)
+        # Senin attığın formatta "cevap" kullanılmış olabilir veya "dogru_cevap".
+        # Kodun çökmemesi için ikisini de deniyoruz:
+        dogru_cevap = sorular[mevcut_index].get("cevap") or sorular[mevcut_index].get("dogru_cevap")
+        
+        tiklanan_kutu = e.control
+        
+        if secilen_cevap == dogru_cevap:
             dogru_sayisi += 1
-            e.control.bgcolor = "green"
-            e.control.color = "white"
+            tiklanan_kutu.bgcolor = ft.colors.GREEN_100
+            tiklanan_kutu.border = ft.border.all(2, ft.colors.GREEN)
         else:
             yanlis_sayisi += 1
-            e.control.bgcolor = "red"
-            e.control.color = "white"
+            tiklanan_kutu.bgcolor = ft.colors.RED_100
+            tiklanan_kutu.border = ft.border.all(2, ft.colors.RED)
         
-        e.control.text = f"{e.control.text} (SEÇİLDİ)"
-        page.update()
+        tiklanan_kutu.update()
         
-        # Kullanıcı görsün diye azıcık bekleyip geçebiliriz ama şimdilik manuel buton koyalım
-        liste.controls.append(ft.ElevatedButton("SONRAKİ >", on_click=sonraki_soru, bgcolor="blue", color="white"))
+        # Sonraki soru butonu
+        ana_liste.controls.append(
+            ft.Container(
+                content=ft.ElevatedButton("SONRAKİ SORU >", on_click=sonraki_soru, bgcolor="blue", color="white"),
+                padding=20,
+                alignment=ft.alignment.center
+            )
+        )
         page.update()
 
     def sonraki_soru(e):
@@ -89,7 +149,6 @@ def main(page: ft.Page):
         mevcut_index += 1
         arayuzu_ciz()
 
-    # Uygulamayı başlat
     arayuzu_ciz()
 
 ft.app(target=main)
