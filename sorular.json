@@ -277,7 +277,258 @@
           "metin": "50. Atatürk döneminde Türkiye Milletler Cemiyeti'ne ne zaman üye olmuştur?",
           "secenekler": ["1930", "1932", "1936", "1939"],
           "cevap": "1932"
+        },
+                {
+          "metin": "51. Din ve devlet işlerinin birbirinden ayrılmasını, akıl ve bilimin rehberliğini esas alan Atatürk ilkesi hangisidir?",
+          "secenekler": ["Laiklik", "Cumhuriyetçilik", "Halkçılık", "Devletçilik"],
+          "cevap": "Laiklik"
+        },
+        {
+          "metin": "52. Seçim, siyasi parti, meclis ve demokrasi kavramları doğrudan hangi Atatürk ilkesiyle ilgilidir?",
+          "secenekler": ["Cumhuriyetçilik", "Milliyetçilik", "Devletçilik", "İnkılapçılık"],
+          "cevap": "Cumhuriyetçilik"
+        },
+        {
+          "metin": "53. Toplumda hiçbir sınıf veya zümreye ayrıcalık tanınmamasını, kanun önünde eşitliği savunan ilke hangisidir?",
+          "secenekler": ["Halkçılık", "Laiklik", "Milliyetçilik", "Devletçilik"],
+          "cevap": "Halkçılık"
+        },
+        {
+          "metin": "54. Türk milletinin bağımsızlığını, kültürünü ve tarihini korumayı amaçlayan, 'Ne mutlu Türk'üm diyene' sözüyle özdeşleşen ilke hangisidir?",
+          "secenekler": ["Milliyetçilik", "Halkçılık", "Cumhuriyetçilik", "İnkılapçılık"],
+          "cevap": "Milliyetçilik"
+        },
+        {
+          "metin": "55. Özel sektörün yetersiz kaldığı durumlarda devletin ekonomiye müdahale etmesini ve yatırım yapmasını öngören ilke hangisidir?",
+          "secenekler": ["Devletçilik", "Halkçılık", "Laiklik", "Milliyetçilik"],
+          "cevap": "Devletçilik"
+        },
+        {
+          "metin": "56. Eski kurumların yerine çağdaş kurumların kurulmasını ve sürekli yenileşmeyi hedefleyen ilke hangisidir?",
+          "secenekler": ["İnkılapçılık", "Cumhuriyetçilik", "Milliyetçilik", "Halkçılık"],
+          "cevap": "İnkılapçılık"
+        },
+        {
+          "metin": "57. Türkiye, Yunanistan, Yugoslavya ve Romanya arasında 1934 yılında sınır güvenliğini sağlamak amacıyla kurulan pakt hangisidir?",
+          "secenekler": ["Balkan Antantı", "Sadabat Paktı", "Bağdat Paktı", "NATO"],
+          "cevap": "Balkan Antantı"
+        },
+        {
+          "metin": "58. Türkiye, İran, Irak ve Afganistan arasında 1937 yılında imzalanan doğu sınırlarını korumaya yönelik antlaşma hangisidir?",
+          "secenekler": ["Sadabat Paktı", "Balkan Antantı", "CENTO", "Kellogg Paktı"],
+          "cevap": "Sadabat Paktı"
+        },
+        {
+          "metin": "59. Boğazlar üzerindeki kısıtlamaların kaldırılarak Türkiye'nin tam hakimiyet sağladığı sözleşme hangisidir?",
+          "secenekler": ["Montrö Boğazlar Sözleşmesi (1936)", "Lozan Antlaşması (1923)", "Sevr Antlaşması (1920)", "Londra Konferansı (1921)"],
+          "cevap": "Montrö Boğazlar Sözleşmesi (1936)"
+        },
+        {
+          "metin": "60. Hatay Cumhuriyeti'nin ilk ve tek Cumhurbaşkanı kimdir?",
+          "secenekler": ["Tayfur Sökmen", "Abdurrahman Melek", "Şükrü Saraçoğlu", "Rauf Orbay"],
+          "cevap": "Tayfur Sökmen"
+        },
+        {
+          "metin": "61. Hatay Meclisi'nin aldığı kararla Hatay, Türkiye'ye hangi yıl katılmıştır?",
+          "secenekler": ["1939", "1938", "1936", "1940"],
+          "cevap": "1939"
+        },
+        {
+          "metin": "62. Türkiye ile Yunanistan arasında 1930'da çözüme kavuşturulan, yerleşik Rum ve Türklerin karşılıklı yer değiştirmesi olayına ne ad verilir?",
+          "secenekler": ["Nüfus Mübadelesi (Etapli)", "Kıbrıs Sorunu", "Ege Adaları Sorunu", "Kıta Sahanlığı Sorunu"],
+          "cevap": "Nüfus Mübadelesi (Etapli)"
+        },
+        {
+          "metin": "63. Mustafa Kemal Atatürk, 10 Kasım 1938'de nerede vefat etmiştir?",
+          "secenekler": ["Dolmabahçe Sarayı", "Çankaya Köşkü", "Savarona Yatı", "Beylerbeyi Sarayı"],
+          "cevap": "Dolmabahçe Sarayı"
+        },
+        {
+          "metin": "64. Atatürk'ün naaşı, Anıtkabir yapılana kadar (1938-1953) nerede muhafaza edilmiştir?",
+          "secenekler": ["Etnografya Müzesi", "TBMM", "Hacı Bayram Camii", "Ankara Kalesi"],
+          "cevap": "Etnografya Müzesi"
+        },
+        {
+          "metin": "65. Anıtkabir'in mimarları kimlerdir?",
+          "secenekler": ["Emin Onat ve Orhan Arda", "Mimar Kemalettin", "Vedat Tek", "Sedad Hakkı Eldem"],
+          "cevap": "Emin Onat ve Orhan Arda"
+        },
+        {
+          "metin": "66. II. Dünya Savaşı hangi yıllar arasında gerçekleşmiştir?",
+          "secenekler": ["1939-1945", "1914-1918", "1940-1950", "1938-1944"],
+          "cevap": "1939-1945"
+        },
+        {
+          "metin": "67. II. Dünya Savaşı sırasında Türkiye'nin Cumhurbaşkanı kimdir?",
+          "secenekler": ["İsmet İnönü", "Celal Bayar", "Mustafa Kemal Atatürk", "Cemal Gürsel"],
+          "cevap": "İsmet İnönü"
+        },
+        {
+          "metin": "68. Türkiye, II. Dünya Savaşı'na fiilen katılmamış ancak savaşın sonunda BM'ye kurucu üye olabilmek için kime savaş ilan etmiştir?",
+          "secenekler": ["Almanya ve Japonya", "İngiltere ve Fransa", "Rusya", "İtalya"],
+          "cevap": "Almanya ve Japonya"
+        },
+        {
+          "metin": "69. II. Dünya Savaşı yıllarında Türkiye'de stokçuluğu önlemek ve ekonomiyi kontrol etmek için çıkarılan kanun hangisidir?",
+          "secenekler": ["Milli Korunma Kanunu", "Takrir-i Sükûn", "Teşvik-i Sanayi", "Varlık Vergisi"],
+          "cevap": "Milli Korunma Kanunu"
+        },
+        {
+          "metin": "70. 1940 yılında köylere öğretmen yetiştirmek amacıyla Hasan Ali Yücel ve İsmail Hakkı Tonguç öncülüğünde kurulan okullar hangisidir?",
+          "secenekler": ["Köy Enstitüleri", "Millet Mektepleri", "İdadiler", "Darülfünun"],
+          "cevap": "Köy Enstitüleri"
+        },
+        {
+          "metin": "71. Türkiye'de çok partili hayata geçişin ilk muhalefet partisi olarak kabul edilen parti hangisidir?",
+          "secenekler": ["Milli Kalkınma Partisi (Nuri Demirağ)", "Demokrat Parti", "Millet Partisi", "Hürriyet Partisi"],
+          "cevap": "Milli Kalkınma Partisi (Nuri Demirağ)"
+        },
+        {
+          "metin": "72. CHP'den ayrılarak 'Dörtlü Takrir'i veren ve Demokrat Parti'yi kuran kişiler arasında hangisi yoktur?",
+          "secenekler": ["İsmet İnönü", "Celal Bayar", "Adnan Menderes", "Fuat Köprülü"],
+          "cevap": "İsmet İnönü"
+        },
+        {
+          "metin": "73. Türkiye'de ilk kez 'tek dereceli' seçim sistemi hangi yıl uygulanmıştır?",
+          "secenekler": ["1946", "1950", "1923", "1961"],
+          "cevap": "1946"
+        },
+        {
+          "metin": "74. 'Açık oy, gizli tasnif' usulüyle yapılan şaibeli seçim olarak bilinen seçim hangisidir?",
+          "secenekler": ["1946 Seçimleri", "1950 Seçimleri", "1954 Seçimleri", "1957 Seçimleri"],
+          "cevap": "1946 Seçimleri"
+        },
+        {
+          "metin": "75. 'Gizli oy, açık tasnif' usulüyle yapılan ve Demokrat Parti'nin iktidara geldiği 'Beyaz Devrim' olarak adlandırılan seçim hangisidir?",
+          "secenekler": ["1950 Seçimleri", "1946 Seçimleri", "1965 Seçimleri", "1983 Seçimleri"],
+          "cevap": "1950 Seçimleri"
+        },
+        {
+          "metin": "76. Türkiye, NATO'ya üye olabilmek için hangi savaşa asker göndermiştir?",
+          "secenekler": ["Kore Savaşı", "Körfez Savaşı", "Vietnam Savaşı", "Kıbrıs Savaşı"],
+          "cevap": "Kore Savaşı"
+        },
+        {
+          "metin": "77. Türkiye NATO'ya hangi yıl resmen üye olmuştur?",
+          "secenekler": ["1952", "1949", "1955", "1960"],
+          "cevap": "1952"
+        },
+        {
+          "metin": "78. Demokrat Parti döneminde (1950-1960) yapılan icraatlardan biri hangisidir?",
+          "secenekler": ["Ezanın tekrar Arapça okunması", "Köy Enstitülerinin kurulması", "Hatay'ın anavatana katılması", "Harf İnkılabı"],
+          "cevap": "Ezanın tekrar Arapça okunması"
+        },
+        {
+          "metin": "79. 6-7 Eylül 1955 olayları kime karşı yapılmıştır?",
+          "secenekler": ["Rum azınlığa", "Ermenilere", "Müslümanlara", "Turistlere"],
+          "cevap": "Rum azınlığa"
+        },
+        {
+          "metin": "80. Türkiye Cumhuriyeti tarihinde gerçekleşen ilk askeri darbe hangisidir?",
+          "secenekler": ["27 Mayıs 1960", "12 Mart 1971", "12 Eylül 1980", "28 Şubat 1997"],
+          "cevap": "27 Mayıs 1960"
+        },
+        {
+          "metin": "81. 27 Mayıs 1960 darbesinden sonra idam edilen Başbakan kimdir?",
+          "secenekler": ["Adnan Menderes", "Fatin Rüştü Zorlu", "Hasan Polatkan", "Süleyman Demirel"],
+          "cevap": "Adnan Menderes"
+        },
+        {
+          "metin": "82. Kişi hak ve özgürlükleri açısından en geniş kapsamlı ve özgürlükçü anayasa hangisidir?",
+          "secenekler": ["1961 Anayasası", "1924 Anayasası", "1982 Anayasası", "1921 Anayasası"],
+          "cevap": "1961 Anayasası"
+        },
+        {
+          "metin": "83. Anayasa Mahkemesi hangi anayasa ile kurulmuştur?",
+          "secenekler": ["1961 Anayasası", "1924 Anayasası", "1982 Anayasası", "1876 Kanun-i Esasi"],
+          "cevap": "1961 Anayasası"
+        },
+        {
+          "metin": "84. 1964 yılında Kıbrıs sorunu nedeniyle ABD Başkanı'nın Türkiye'ye gönderdiği tehdit içerikli mektup hangisidir?",
+          "secenekler": ["Johnson Mektubu", "Truman Doktrini", "Marshall Planı", "Eisenhower Bildirisi"],
+          "cevap": "Johnson Mektubu"
+        },
+        {
+          "metin": "85. 1974 Kıbrıs Barış Harekatı sırasındaki Türkiye Cumhuriyeti Başbakanı kimdir?",
+          "secenekler": ["Bülent Ecevit", "Süleyman Demirel", "Necmettin Erbakan", "Turgut Özal"],
+          "cevap": "Bülent Ecevit"
+        },
+        {
+          "metin": "86. 1974 Kıbrıs Barış Harekatı'nın parolası nedir?",
+          "secenekler": ["Ayşe tatile çıksın", "Ordular ilk hedefiniz Akdeniz", "Yurtta sulh cihanda sulh", "Vatan sana canım feda"],
+          "cevap": "Ayşe tatile çıksın"
+        },
+        {
+          "metin": "87. Kuzey Kıbrıs Türk Cumhuriyeti'nin (KKTC) kurucu Cumhurbaşkanı kimdir?",
+          "secenekler": ["Rauf Denktaş", "Dr. Fazıl Küçük", "Derviş Eroğlu", "Mustafa Akıncı"],
+          "cevap": "Rauf Denktaş"
+        },
+        {
+          "metin": "88. 1970'li yıllarda Türk diplomatlarına karşı suikastler düzenleyen Ermeni terör örgütü hangisidir?",
+          "secenekler": ["ASALA", "PKK", "DAEŞ", "FETÖ"],
+          "cevap": "ASALA"
+        },
+        {
+          "metin": "89. 12 Eylül 1980 askeri darbesini gerçekleştiren Genelkurmay Başkanı kimdir?",
+          "secenekler": ["Kenan Evren", "Cemal Gürsel", "Memduh Tağmaç", "Çevik Bir"],
+          "cevap": "Kenan Evren"
+        },
+        {
+          "metin": "90. Yükseköğretim Kurulu (YÖK) hangi anayasa ile kurulmuştur?",
+          "secenekler": ["1982 Anayasası", "1961 Anayasası", "1924 Anayasası", "2017 Değişikliği"],
+          "cevap": "1982 Anayasası"
+        },
+        {
+          "metin": "91. 24 Ocak 1980 Kararları'nın mimarı olan ve serbest piyasa ekonomisine geçişi sağlayan devlet adamı kimdir?",
+          "secenekler": ["Turgut Özal", "Süleyman Demirel", "Bülent Ecevit", "Mesut Yılmaz"],
+          "cevap": "Turgut Özal"
+        },
+        {
+          "metin": "92. Soğuk Savaş döneminde Batı Bloku'nun (ABD öncülüğünde) askeri örgütü hangisidir?",
+          "secenekler": ["NATO", "Varşova Paktı", "Birleşmiş Milletler", "Avrupa Birliği"],
+          "cevap": "NATO"
+        },
+        {
+          "metin": "93. Soğuk Savaş döneminde Doğu Bloku'nun (SSCB öncülüğünde) askeri örgütü hangisidir?",
+          "secenekler": ["Varşova Paktı", "NATO", "COMECON", "Kominform"],
+          "cevap": "Varşova Paktı"
+        },
+        {
+          "metin": "94. II. Dünya Savaşı'ndan sonra Avrupa'nın ekonomik kalkınması için ABD'nin uyguladığı yardım planı hangisidir?",
+          "secenekler": ["Marshall Planı", "Truman Doktrini", "Schuman Bildirisi", "Molotov Planı"],
+          "cevap": "Marshall Planı"
+        },
+        {
+          "metin": "95. Soğuk Savaş'ın sembolü olan 'Berlin Duvarı' hangi yıl yıkılmıştır?",
+          "secenekler": ["1989", "1991", "1980", "1975"],
+          "cevap": "1989"
+        },
+        {
+          "metin": "96. Sovyetler Birliği (SSCB) hangi yıl resmen dağılmıştır?",
+          "secenekler": ["1991", "1989", "1990", "1993"],
+          "cevap": "1991"
+        },
+        {
+          "metin": "97. SSCB'nin dağılmasıyla bağımsızlığını ilan eden ilk Türk Cumhuriyeti hangisidir?",
+          "secenekler": ["Azerbaycan", "Kazakistan", "Özbekistan", "Kırgızistan"],
+          "cevap": "Azerbaycan"
+        },
+        {
+          "metin": "98. Bosna-Hersek'in efsanevi lideri ve 'Bilge Kral' lakaplı devlet adamı kimdir?",
+          "secenekler": ["Aliya İzzetbegoviç", "Slobodan Miloseviç", "Radovan Karadziç", "Tito"],
+          "cevap": "Aliya İzzetbegoviç"
+        },
+        {
+          "metin": "99. Türkiye'nin Avrupa Birliği'ne (o zamanki adıyla AET) ilk başvurusunu yaptığı antlaşma hangisidir?",
+          "secenekler": ["Ankara Antlaşması (1963)", "Katma Protokol", "Gümrük Birliği", "Maastricht Antlaşması"],
+          "cevap": "Ankara Antlaşması (1963)"
+        },
+        {
+          "metin": "100. Türkiye ile Avrupa Birliği arasında Gümrük Birliği hangi yıl yürürlüğe girmiştir?",
+          "secenekler": ["1996", "1990", "1999", "2005"],
+          "cevap": "1996"
         }
+        
       ]
     },
     {
