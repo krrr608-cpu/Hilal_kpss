@@ -24,24 +24,24 @@ jobs:
         with:
           flutter-version: '3.19.6'
 
-      - name: Kutuphaneleri Yukle (Temiz Kurulum)
+      - name: Kutuphaneleri Yukle (Zorla Guncelleme)
         run: |
-          # ADIM 1: requirements.txt içindeki flet satırını SİLİYORUZ.
-          # Böylece eski sürümün yüklenmesini engelliyoruz.
+          # ADIM 1: requirements.txt dosyasındaki eski sürüm isteğini SİLİYORUZ.
+          # Bu sayede bilgisayarın kafası karışmayacak.
           sed -i '/flet/d' requirements.txt
           
-          # ADIM 2: Flet HARİÇ diğer kütüphaneleri yüklüyoruz.
+          # ADIM 2: Diğer kütüphaneleri yüklüyoruz.
           pip install -r requirements.txt
           
-          # ADIM 3: Şimdi istediğimiz sürümü biz elle yüklüyoruz.
+          # ADIM 3: İsim değiştirme özelliğini bilen sürümü (0.24.1) yüklüyoruz.
           pip install flet==0.24.1
           
-          # KONTROL: Ekrana sürümü yazdıralım (0.24.1 görmeliyiz)
-          echo "YUKLENEN FLET SURUMU:"
+          # KONTROL: Ekrana sürümü yazdıralım.
+          echo "Su an kullanılan Flet surumu:"
           flet --version
 
       - name: APK Derle
-        # Artık sistemde zorla 0.24.1 var, bu kod çalışmak ZORUNDA.
+        # Artık sistemde 0.24.1 olduğu için bu komut HATA VERMEDEN çalışacak:
         run: flet build apk --product-name "Hilal_kpss" --icon icon.png --verbose
 
       - name: Dosyayi Yukle
