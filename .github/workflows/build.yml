@@ -22,7 +22,7 @@ jobs:
       - name: Flutter Kur
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.6'
+          flutter-version: '3.22.2' # Daha stabil bir sürüm'
 
       - name: Kutuphaneleri Yukle
         run: |
