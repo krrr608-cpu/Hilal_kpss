@@ -11,7 +11,7 @@
     "sik_yazi_boyutu": 16,
     "baslik_ortala": true,
     "golge_olsun_mu": true
-{
+  },
   "kategoriler": [
     {
       "ad": "Tarih",
@@ -246,7 +246,7 @@
           "cevap": "1934-1939"
         },
         {
-          "metin": "43. Atatürk'ün 'Köylü milletin efendisidir' sözü doğrultusunda köylünün üzerindeki yükü kaldırmak için 1925'te kaldırılan vergi hangisidir?",
+          "metin": "43. Atatürk'ün 'Köylü milletin efendisidir' sözü doğrultusunda köylünün üzerindeki yüku kaldırmak için 1925'te kaldırılan vergi hangisidir?",
           "secenekler": ["Aşar (Öşür) Vergisi", "Varlık Vergisi", "Ağnam Vergisi", "Cizye Vergisi"],
           "cevap": "Aşar (Öşür) Vergisi"
         },
@@ -285,7 +285,7 @@
           "secenekler": ["1930", "1932", "1936", "1939"],
           "cevap": "1932"
         },
-                {
+        {
           "metin": "51. Din ve devlet işlerinin birbirinden ayrılmasını, akıl ve bilimin rehberliğini esas alan Atatürk ilkesi hangisidir?",
           "secenekler": ["Laiklik", "Cumhuriyetçilik", "Halkçılık", "Devletçilik"],
           "cevap": "Laiklik"
@@ -351,7 +351,7 @@
           "cevap": "Dolmabahçe Sarayı"
         },
         {
-          "metin": "64. Atatürk'ün naaşı, Anıtkabir yapılana kadar (1938-1953) nerede muhafaza edilmiştir?",
+          "metin": "64. Atatürk'un naaşı, Anıtkabir yapılana kadar (1938-1953) nerede muhafaza edilmiştir?",
           "secenekler": ["Etnografya Müzesi", "TBMM", "Hacı Bayram Camii", "Ankara Kalesi"],
           "cevap": "Etnografya Müzesi"
         },
@@ -535,7 +535,7 @@
           "secenekler": ["1996", "1990", "1999", "2005"],
           "cevap": "1996"
         },
-                {
+        {
           "metin": "101. II. Dünya Savaşı'ndan sonra kurulan Birleşmiş Milletler'in (BM) merkezi neresidir?",
           "secenekler": ["New York", "Cenevre", "Brüksel", "Paris"],
           "cevap": "New York"
@@ -716,7 +716,7 @@
           "cevap": "Şanlıurfa"
         },
         {
-          "metin": "137. Çin'in Wuhan kentinde ortaya çıkan ve dünyayı etkisi altına alan salgın hastalık hangisidir?",
+          "metin": "137. Çin'un Wuhan kentinde ortaya çıkan ve dünyayı etkisi altına alan salgın hastalık hangisidir?",
           "secenekler": ["Covid-19", "SARS", "MERS", "Ebola"],
           "cevap": "Covid-19"
         },
@@ -785,8 +785,6 @@
           "secenekler": ["Dünyanın en büyük 20 ekonomisini", "En kalabalık 20 ülkeyi", "En geniş yüzölçümlü 20 ülkeyi", "En çok silahlanan 20 ülkeyi"],
           "cevap": "Dünyanın en büyük 20 ekonomisini"
         }
-          
-        
       ]
     },
     {
