@@ -5,17 +5,20 @@ import urllib.request
 def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
+    
+    # Ana ekran taşıyıcısı
     ana_liste = ft.ListView(expand=True, spacing=0, padding=ft.padding.only(top=50, bottom=20))
     page.add(ana_liste)
 
     URL = "https://raw.githubusercontent.com/krrr608-cpu/Hilal_kpss/refs/heads/main/sorular.json"
 
-    # Global Değişkenler
+    # Veri Deposu
     veriler = {}
     cozulen_sorular = [] 
     hatali_sorular = []
     aktif_sorular = []
     mevcut_index = 0
+    toplam_puan = 0
     oturum_cevaplari = {} 
 
     def verileri_guncelle():
@@ -31,96 +34,121 @@ def main(page: ft.Page):
         
         cozulen_sorular = page.client_storage.get("cozulenler") if page.client_storage.contains_key("cozulenler") else []
         hatali_sorular = page.client_storage.get("hatalar") if page.client_storage.contains_key("hatalar") else []
-        page.update()
 
-    # --- DERS NOTU GÖSTERİCİ ---
+    # --- 📖 DERS NOTU PENCERESİ ---
     def ders_notu_ac(baslik, icerik, renk):
         def kapat(e):
             page.close(dlg)
-
         dlg = ft.AlertDialog(
-            title=ft.Row([ft.Icon(ft.icons.MENU_BOOK, color=renk), ft.Text(baslik, weight="bold", size=20)], tight=True),
-            content=ft.Container(
-                content=ft.Column([
-                    ft.Divider(),
-                    ft.Text(icerik, size=16, selectable=True),
-                ], scroll=ft.ScrollMode.ADAPTIVE, tight=True),
-                width=400,
-                height=500,
-            ),
-            actions=[ft.TextButton("Anladım", on_click=kapat)],
-            actions_alignment=ft.MainAxisAlignment.END,
+            title=ft.Text(baslik, weight="bold"),
+            content=ft.Container(content=ft.Column([ft.Divider(), ft.Text(icerik, size=16)], scroll=ft.ScrollMode.ADAPTIVE), height=400, width=350),
+            actions=[ft.TextButton("Kapat", on_click=kapat)],
             shape=ft.RoundedRectangleBorder(radius=15),
         )
-        page.overlay.append(dlg)
-        dlg.open = True
-        page.update()
+        page.overlay.append(dlg); dlg.open = True; page.update()
 
-    # --- KATEGORİ VE ALT KATEGORİ LİSTELEYİCİ ---
-    def kategorileri_ciz(liste, ust_baslik="KPSS", renk="indigo", is_sub=False):
+    # --- 🏠 ANA MENÜ VE LİSTELEME ---
+    def kategorileri_ciz(liste, ust_baslik="Hilal KPSS", renk="indigo", is_sub=False):
         ana_liste.controls.clear()
         
+        # Üst Bilgi Alanı
         header = ft.Container(
             content=ft.Column([
                 ft.Row([
                     ft.IconButton(ft.icons.ARROW_BACK, icon_color="white", on_click=lambda _: ana_menuyu_ciz()) if is_sub else ft.Container(),
-                    ft.Text(ust_baslik, size=24, weight="bold", color="white"),
+                    ft.Text(ust_baslik, size=22, weight="bold", color="white"),
                 ], alignment="start"),
-                ft.Text("Çalışmak istediğin bölümü seç", color="white70", size=12)
-            ], horizontal_alignment="center"),
-            bgcolor=renk, padding=30, border_radius=ft.border_radius.only(bottom_left=20, bottom_right=20)
+                ft.Text("Başlamak için bir bölüm seçin", color="white70", size=12)
+            ]),
+            bgcolor=renk, padding=25, border_radius=ft.border_radius.only(bottom_left=20, bottom_right=20)
         )
         ana_liste.controls.append(header)
 
         for öğe in liste:
-            tip = öğe.get("tip", "kategori") # 'not' veya 'kategori'
+            tip = öğe.get("tip", "kategori")
             
             if tip == "not":
-                # DERS NOTU MANTIĞI
-                on_click_func = lambda e, b=öğe["ad"], i=öğe["icerik"], r=öğe.get("renk", renk): ders_notu_ac(b, i, r)
-                alt_bilgi = "Ders Notu 📖"
-                kart_renk = öğe.get("renk", "orange")
-                ikon = ft.icons.DESCRIPTION
-            elif öğe.get("alt_kategoriler"):
-                # ALT KATEGORİ MANTIĞI
-                on_click_func = lambda e, alt=öğe["alt_kategoriler"], ad=öğe["ad"], r=öğe.get("renk", renk): kategorileri_ciz(alt, ad, r, True)
-                alt_bilgi = f"{len(öğe['alt_kategoriler'])} Alt Başlık"
-                kart_renk = öğe.get("renk", "blue")
-                ikon = öğe.get("ikon", ft.icons.FOLDER)
+                on_click_func = lambda e, b=öğe["ad"], i=öğe["icerik"], r=renk: ders_notu_ac(b, i, r)
+                alt_bilgi = "Ders Notu 📖"; kart_renk = "orange"; ikon = ft.icons.DESCRIPTION
+            elif "alt_kategoriler" in öğe:
+                on_click_func = lambda e, l=öğe["alt_kategoriler"], a=öğe["ad"], r=renk: kategorileri_ciz(l, a, r, True)
+                alt_bilgi = f"{len(öğe['alt_kategoriler'])} Alt Bölüm"; kart_renk = "blue"; ikon = ft.icons.FOLDER
             else:
-                # SORU BANKASI MANTIĞI
                 sorular = öğe.get("sorular", [])
-                cozulmemis = [s for s in sorular if s["metin"] not in cozulen_sorular]
-                on_click_func = lambda e, k=öğe, s=cozulmemis: ders_testini_baslat(k, s)
-                alt_bilgi = f"Kalan Soru: {len(cozulmemis)}"
-                kart_renk = öğe.get("renk", "green")
-                ikon = öğe.get("ikon", ft.icons.QUIZ)
+                on_click_func = lambda e, k=öğe, s=sorular: ders_testini_baslat(k, s)
+                alt_bilgi = f"Soru Sayısı: {len(sorular)}"; kart_renk = "green"; ikon = ft.icons.QUIZ
 
             ana_liste.controls.append(
                 ft.Container(
-                    content=ft.Row([
-                        ft.Icon(name=ikon, size=35, color="white"),
-                        ft.Column([
-                            ft.Text(öğe.get("ad"), size=18, weight="bold", color="white"),
-                            ft.Text(alt_bilgi, color="white70", size=12)
-                        ], spacing=0)
-                    ]),
-                    bgcolor=kart_renk, padding=15, margin=ft.margin.symmetric(horizontal=20, vertical=8),
-                    border_radius=12, on_click=on_click_func, ink=True
+                    content=ft.Row([ft.Icon(ikon, color="white"), ft.Column([ft.Text(öğe["ad"], color="white", weight="bold"), ft.Text(alt_bilgi, color="white70", size=11)])]),
+                    bgcolor=kart_renk, padding=15, margin=ft.margin.symmetric(horizontal=20, vertical=5),
+                    border_radius=10, on_click=on_click_func, ink=True
                 )
             )
         page.update()
 
+    # --- ✍️ TEST MOTORU ---
+    def ders_testini_baslat(kategori, soru_listesi):
+        nonlocal aktif_sorular, mevcut_index, oturum_cevaplari, toplam_puan
+        aktif_sorular = soru_listesi
+        mevcut_index = 0
+        oturum_cevaplari = {}
+        toplam_puan = 0
+        test_ekranini_ciz(kategori.get("renk", "green"), kategori["ad"])
+
+    def test_ekranini_ciz(renk, baslik):
+        ana_liste.controls.clear()
+        soru = aktif_sorular[mevcut_index]
+        
+        # Test Header
+        ana_liste.controls.append(ft.Container(
+            content=ft.Row([
+                ft.IconButton(ft.icons.CLOSE, icon_color="white", on_click=lambda _: ana_menuyu_ciz()),
+                ft.Text(baslik, color="white", weight="bold"),
+                ft.Text(f"{mevcut_index+1}/{len(aktif_sorular)}", color="white")
+            ], alignment="spaceBetween"),
+            bgcolor=renk, padding=10
+        ))
+
+        # Soru Kartı
+        ana_liste.controls.append(ft.Container(
+            content=ft.Text(soru["metin"], size=18, weight="w500"),
+            padding=20, margin=15, bgcolor="white", border_radius=10, shadow=ft.BoxShadow(blur_radius=5, color="black12")
+        ))
+
+        # Şıklar
+        for secenek in soru["secenekler"]:
+            def cevap_kontrol(e, sec=secenek):
+                if mevcut_index in oturum_cevaplari: return # Zaten çözüldüyse basma
+                dogru = soru["cevap"]
+                if sec == dogru:
+                    e.control.bgcolor = "green100"; e.control.border = ft.border.all(2, "green")
+                else:
+                    e.control.bgcolor = "red100"; e.control.border = ft.border.all(2, "red")
+                oturum_cevaplari[mevcut_index] = sec
+                page.update()
+
+            ana_liste.controls.append(ft.Container(
+                content=ft.Text(secenek, size=16),
+                padding=15, margin=ft.margin.symmetric(horizontal=25, vertical=5),
+                border=ft.border.all(1, "grey300"), border_radius=8, on_click=cevap_kontrol
+            ))
+
+        # Alt Navigasyon
+        ana_liste.controls.append(ft.Row([
+            ft.TextButton("Geri", on_click=lambda _: navigasyon(-1, renk, baslik), disabled=(mevcut_index==0)),
+            ft.TextButton("İleri", on_click=lambda _: navigasyon(1, renk, baslik), disabled=(mevcut_index==len(aktif_sorular)-1))
+        ], alignment="center"))
+        page.update()
+
+    def navigasyon(yon, renk, baslik):
+        nonlocal mevcut_index
+        mevcut_index += yon
+        test_ekranini_ciz(renk, baslik)
+
     def ana_menuyu_ciz():
         verileri_guncelle()
         kategorileri_ciz(veriler.get("kategoriler", []))
-
-    # --- TEST MANTIĞI (Öncekiyle Aynı) ---
-    def ders_testini_baslat(kategori, filtrelenmis_sorular):
-        if not filtrelenmis_sorular: return
-        nonlocal aktif_sorular, mevcut_index; aktif_sorular = filtrelenmis_sorular; mevcut_index = 0
-        # Burada senin mevcut test_ekranini_ciz fonksiyonunu çağırabilirsin...
-        # (Kısalık adına test çizim kodlarını buraya eklemiyorum, senin orijinal kodunla aynı kalacak)
 
     ana_menuyu_ciz()
 
