@@ -1,6 +1,7 @@
 {
   "ayarlar": {
     "baslik": "Hilal KPSS",
+    "guncel_versiyon": "1.2",
     "tema_rengi": "indigo",
     "arka_plan_rengi": "#f3f4f6"
   },
@@ -13,29 +14,27 @@
         {
           "ad": "Osmanlı Kuruluş Notu",
           "tip": "not",
-          "icerik": "Osmanlı Devleti 1299 yılında Osman Bey tarafından kurulmuştur.",
+          "icerik": "Osmanlı Devleti 1299 yılında Osman Bey tarafından Söğüt ve Domaniç çevresinde kurulmuştur. İlk padişah Osman Bey'dir. Bizans ile yapılan ilk savaş Koyunhisar Savaşı'dır.",
           "renk": "orange"
         },
         {
           "ad": "Genel Tarih Testi",
+          "renk": "green",
           "sorular": [
             {
               "metin": "İstanbul kaç yılında fethedildi?",
               "secenekler": ["1453", "1071", "1299", "1923"],
               "cevap": "1453"
             }
+          ]
+        }
       ]
     },
     {
-      "ad": "Tarih 2",
+      "ad": "Tarih 2 (Full Soru)",
       "ikon": "history_edu",
       "renk": "orange",
       "sorular": [
-        {
-          "metin": "Tarih Soru 2: Başka bir soru örneği?",
-          "secenekler": ["A", "B", "C", "D"],
-          "cevap": "A"
-        },
         {
           "metin": "1. Milli Mücadele'nin 'amacı, gerekçesi ve yöntemi' ilk kez nerede belirtilmiştir?",
           "secenekler": ["Havza Genelgesi", "Amasya Genelgesi", "Erzurum Kongresi", "Sivas Kongresi"],
@@ -824,140 +823,8 @@
           "metin": "3. Soru: Kitap okumak zihni besler, kelime dağarcığını geliştirir ve empati yeteneğini artırır. Ayrıca stresi azaltarak zihinsel dinginlik sağlar. Ancak dijital bağımlılık bu alışkanlığı zayıflatmaktadır.\n\nParçaya göre kitap okumanın faydalarından biri değildir?",
           "secenekler": ["Empati kurma becerisini geliştirmesi", "Kelime hazinesini zenginleştirmesi", "Doğrudan gelir sağlaması", "Stresi azaltması"],
           "cevap": "Doğrudan gelir sağlaması"
-        },
-        {
-          "metin": "4. Soru: Nurullah Ataç, denemelerinde samimi bir üslup kullanmış, okuyucuyu düşünmeye sevk etmiştir. Onun yazıları öğreticilikten ziyade düşündürücülüğü ile ön plana çıkar.\n\nNurullah Ataç'ın denemelerinin en belirgin özelliği nedir?",
-          "secenekler": ["Kesin bilgiler vermesi", "Samimi üslupla düşündürmesi", "Tarihi olayları anlatması", "Ağır bir dil kullanması"],
-          "cevap": "Samimi üslupla düşündürmesi"
-        },
-        {
-          "metin": "5. Soru: Geleneksel Türk tiyatrosu yazılı bir metne dayanmaz, doğaçlamadır. Karagöz ve Orta Oyunu buna örnektir. Güldürü ön plandadır.\n\nParçadan hangisi çıkarılamaz?",
-          "secenekler": ["Doğaçlama oynandığı", "Güldürü unsurunun olduğu", "Yazılı metne sıkı sıkıya bağlı olduğu", "Karagöz'ün bir örnek olduğu"],
-          "cevap": "Yazılı metne sıkı sıkıya bağlı olduğu"
-        },
-        {
-          "metin": "6. Soru: Teknoloji harika bir araçtır ancak ...... . Bilinçsiz kullanım sosyal ilişkileri zayıflatır.\n\nBoşluğa hangisi getirilmelidir?",
-          "secenekler": ["onu tamamen yasaklamalıyız", "doğru kullanılmazsa zararlıdır", "her zaman en yenisini almalıyız", "sadece iş için kullanılmalıdır"],
-          "cevap": "doğru kullanılmazsa zararlıdır"
-        },
-        {
-          "metin": "7. Soru: Başarı sadece varılan nokta değil, yolculuğun kendisidir. Madalya değil, aşılan engeller insanı olgunlaştırır.\n\nParçaya en uygun başlık nedir?",
-          "secenekler": ["Başarının Tanımı ve Süreci", "Madalyaların Önemi", "Yolculuk Yapmak", "Engellerden Kaçmak"],
-          "cevap": "Başarının Tanımı ve Süreci"
-        },
-        {
-          "metin": "8. Soru: Dil bir milletin hafızasıdır. Kültür dil ile taşınır. Dili bozulan millet tarihini unutur.\n\nVurgulanmak istenen düşünce nedir?",
-          "secenekler": ["Yabancı dil öğrenilmemeli", "Dilin milli kimliği korumadaki önemi", "Tarihin dilden önemli olduğu", "Kültürün değişmesi gerektiği"],
-          "cevap": "Dilin milli kimliği korumadaki önemi"
-        },
-        {
-          "metin": "9. Soru: Stresle başa çıkmak için spor yapılabilir veya müzik dinlenebilir. Ancak uzmanlar en etkili yolun 'doğru nefes' olduğunu söylüyor.\n\nHangisi stresle başa çıkma yöntemi olarak sayılmamıştır?",
-          "secenekler": ["Spor yapmak", "Müzik dinlemek", "Doğru nefes almak", "Aşırı yemek yemek"],
-          "cevap": "Aşırı yemek yemek"
-        },
-        {
-          "metin": "10. Soru: Çocuklara sorumluluk yaşına uygun verilmelidir. Aksi takdirde çocuk başarısızlık hissine kapılarak öz güvenini kaybedebilir.\n\nParçadan hangisine ulaşılabilir?",
-          "secenekler": ["Çocuklara her iş yaptırılmalıdır", "Sorumluluk eğitimi önemsizdir", "Görevler kapasiteye uygun olmalıdır", "Öz güven doğuştan gelir"],
-          "cevap": "Görevler kapasiteye uygun olmalıdır"
-        },
-        {
-          "metin": "11. Soru: Eleştirmen, eseri incelerken tarafsız olmalıdır. Kendi kişisel zevklerini bir kenara bırakıp eserin edebi değerine odaklanmalıdır. Aksi halde yaptığı iş eleştiri değil, karalama olur.\n\nBu parçada eleştirmende bulunması gereken temel özellik nedir?",
-          "secenekler": ["Çok kitap okuması", "Objektif (tarafsız) olması", "Ünlü yazarları eleştirmesi", "Sadece şiir incelemesi"],
-          "cevap": "Objektif (tarafsız) olması"
-        },
-        {
-          "metin": "12. Soru: Mutluluk, dışarıda aranan bir hazine değildir; insanın kendi içindedir. Bakış açımızı değiştirdiğimizde, sahip olduklarımızın kıymetini bildiğimizde mutluluğu yakalarız.\n\nParçaya göre mutluluğun kaynağı nedir?",
-          "secenekler": ["Zengin olmak", "Gezip görmek", "İnsanın bakış açısı", "Başarılı olmak"],
-          "cevap": "İnsanın bakış açısı"
-        },
-        {
-          "metin": "13. Soru: (I) Roman yazmak sabır işidir. (II) Yazar, karakterlerini ilmek ilmek işler. (III) Şiir ise anlık duyguların patlamasıdır. (IV) Romanın kurgusu aylar sürebilir. (V) Mekan tasvirleri okuyucuyu içine çekmelidir.\n\nNumaralanmış cümlelerden hangisi parçanın konusunun dışındadır?",
-          "secenekler": ["II", "III", "IV", "V"],
-          "cevap": "III"
-        },
-        {
-          "metin": "14. Soru: Zaman yönetimi, modern insanın en büyük problemidir. Herkesin günü 24 saattir ama kimisi dünyaları sığdırır, kimisi tek bir işi bitiremez. Farkı yaratan, planlı yaşamaktır.\n\nParçada vurgulanan düşünce nedir?",
-          "secenekler": ["Zamanın herkese eşit olduğu", "Planlı yaşamanın verimi artırdığı", "Modern hayatın zorluğu", "İşlerin asla bitmediği"],
-          "cevap": "Planlı yaşamanın verimi artırdığı"
-        },
-        {
-          "metin": "15. Soru: Eğitim sadece okulda dört duvar arasında gerçekleşmez. Hayatın her anı, her tecrübe bir öğrenme fırsatıdır. Merak duygusunu kaybetmeyen insan, ölene kadar öğrencidir.\n\nBu parçadan çıkarılabilecek en kapsamlı yargı hangisidir?",
-          "secenekler": ["Okullar gereksizdir", "Öğrenme hayat boyu süren bir süreçtir", "Merak duygusu zararlıdır", "Tecrübe okuldan önemlidir"],
-          "cevap": "Öğrenme hayat boyu süren bir süreçtir"
-        },
-        {
-          "metin": "16. Soru: Yazın dünyasına yeni giren gençler genellikle taklit yoluyla başlar. Büyük ustaların izinden giderler. Ancak kalıcı olabilmek için zamanla kendi seslerini bulmaları, özgün olmaları gerekir.\n\nGenç yazarlara verilen tavsiye nedir?",
-          "secenekler": ["Sürekli taklit yapmaları", "Sadece eski eserleri okumaları", "Kendilerine has bir üslup geliştirmeleri", "Yazmaktan vazgeçmeleri"],
-          "cevap": "Kendilerine has bir üslup geliştirmeleri"
-        },
-        {
-          "metin": "17. Soru: Bozkırın ortasında bir vaha gibidir dostluk. Hayatın zorlukları sizi yorduğunda, gölgesine sığınabileceğiniz bir ağaçtır. Gerçek dost, düştüğünüzde elinizi tutan değil, düşmemeniz için çabalayandır.\n\nYazar dostluğu neye benzetmiştir?",
-          "secenekler": ["Bozkırın sıcağına", "Bir vahaya ve ağaca", "Zorlu bir yola", "Tuzaklara"],
-          "cevap": "Bir vahaya ve ağaca"
-        },
-        {
-          "metin": "18. Soru: Sosyal medya, haberleşmeyi hızlandırsa da bilgi kirliliğine yol açıyor. Doğruluğu teyit edilmemiş haberler hızla yayılıyor. Bu durum, toplumda paniğe ve yanlış yönlendirmelere neden olabiliyor.\n\nParçada sosyal medyanın hangi olumsuz yönüne değinilmiştir?",
-          "secenekler": ["İnternet kotasını bitirmesi", "İnsanları tembelleştirmesi", "Yanlış bilgilerin yayılmasına neden olması", "Haberleşmeyi yavaşlatması"],
-          "cevap": "Yanlış bilgilerin yayılmasına neden olması"
-        },
-        {
-          "metin": "19. Soru: Müzik, evrensel bir dildir. Hangi milletten olursanız olun, hüzünlü bir melodi sizi ağlatabilir veya hareketli bir ritim sizi neşelendirebilir. Çeviriye ihtiyaç duymayan tek metin müziktir.\n\nParçaya göre müziğin en önemli özelliği nedir?",
-          "secenekler": ["Sözlü olması", "Evrensel bir etkiye sahip olması", "Sadece eğlence aracı olması", "Zor öğrenilmesi"],
-          "cevap": "Evrensel bir etkiye sahip olması"
-        },
-        {
-          "metin": "20. Soru: Çevre bilinci, gelecek nesillere bırakacağımız en büyük mirastır. Doğayı hoyratça kullanmak, aslında çocuklarımızın nefesini kesmektir. Her birey, attığı adımdan ve tükettiği kaynaktan sorumlu olduğunu bilmelidir.\n\nBu parçada asıl uyarılmak istenen nokta nedir?",
-          "secenekler": ["Daha çok para biriktirmek gerektiği", "Doğayı korumanın geleceğimiz için hayati olduğu", "Miras kavgalarının önlenmesi", "Tüketimin tamamen durdurulması"],
-          "cevap": "Doğayı korumanın geleceğimiz için hayati olduğu"
-        },
-        {
-          "metin": "21. Soru: Empati, bir başkasının ayakkabılarını giyip yürümek gibidir. Karşımızdakinin duygularını anlamadan, olaylara onun penceresinden bakmadan kurulan iletişim eksiktir. Empati, insan ilişkilerinin çimentosudur.\n\nBu parçada empati neye benzetilmiştir?",
-          "secenekler": ["Bir ayakkabıya", "İnsan ilişkilerinin çimentosuna", "Pencereye", "Yürüyüş yapmaya"],
-          "cevap": "İnsan ilişkilerinin çimentosuna"
-        },
-        {
-          "metin": "22. Soru: Hazır gıdalar, modern yaşamın hızı içinde cazip görünebilir. Ancak ev yemeğinin yerini asla tutamaz. Ev yemeği sadece karın doyurmak değil, sevgiyi ve emeği paylaşmaktır. Ayrıca sağlık açısından da kıyaslanamazlar.\n\nParçanın ana fikri nedir?",
-          "secenekler": ["Hazır gıdaların daha lezzetli olduğu", "Ev yemeğinin hem manevi hem sağlıklı olduğu", "Modern yaşamın çok hızlı olduğu", "Yemek yapmanın zor olduğu"],
-          "cevap": "Ev yemeğinin hem manevi hem sağlıklı olduğu"
-        },
-        {
-          "metin": "23. Soru: (I) Sonbahar gelince doğa sarıya bürünür. (II) Ağaçlar yapraklarını döker, rüzgarlar sertleşir. (III) Yaz tatili planları şimdiden yapılmaya başlandı. (IV) Göçmen kuşlar sıcak ülkelere doğru yola çıkar. (V) Doğa derin bir uykuya hazırlanır.\n\nNumaralanmış cümlelerden hangisi düşüncenin akışını bozmaktadır?",
-          "secenekler": ["II", "III", "IV", "V"],
-          "cevap": "III"
-        },
-        {
-          "metin": "24. Soru: Tarih tekerrürden ibaret değildir, ders alınmadığı için tekerrür eder. Geçmiş hatalardan ders çıkaran milletler, geleceklerini daha sağlam temeller üzerine inşa ederler. Tarih bilinci olmayan toplumlar rüzgarda savrulan yaprak gibidir.\n\nParçaya göre tarih neden tekerrür eder?",
-          "secenekler": ["Zamanın döngüsel olmasından", "İnsanların aynı kalmasından", "Geçmişten ders alınmamasından", "Kitapların yanlış yazılmasından"],
-          "cevap": "Geçmişten ders alınmamasından"
-        },
-        {
-          "metin": "25. Soru: Konuşmak bir ihtiyaçsa, susmak bir sanattır. Bazen kelimelerin anlatamadığını bir bakış, bir susuş anlatır. Yerinde susmayı bilen insan, boş konuşan insandan daha çok şey söyler.\n\nBu parçada vurgulanan düşünce nedir?",
-          "secenekler": ["Hiç konuşmamak gerektiği", "Susmanın da güçlü bir iletişim yolu olduğu", "Sanatçıların az konuştuğu", "İhtiyaçların ertelenmesi gerektiği"],
-          "cevap": "Susmanın da güçlü bir iletişim yolu olduğu"
-        },
-        {
-          "metin": "26. Soru: Köy hayatı ile şehir hayatı arasında derin uçurumlar vardır. Şehirde zaman su gibi akar, insanlar hep bir yerlere yetişme telaşındadır. Köyde ise zaman daha yavaş, daha bereketli işler. İnsanlar doğanın ritmine ayak uydurur.\n\nParçada köy ve şehir hayatı hangi açıdan karşılaştırılmıştır?",
-          "secenekler": ["Ekonomik gelir", "Eğitim olanakları", "Zamanın akış hızı", "Mimari yapı"],
-          "cevap": "Zamanın akış hızı"
-        },
-        {
-          "metin": "27. Soru: Su, yaşamın kaynağıdır. Vücudumuzun büyük bir kısmı sudan oluşur. Ancak dünyadaki temiz su kaynakları hızla azalıyor. Suyu israf etmek, geleceği çöpe atmak demektir. Musluğu kapatmak, bir hayat kurtarmaktır.\n\nBu parçada verilmek istenen mesaj nedir?",
-          "secenekler": ["Su tasarrufunun hayati önemi", "Vücudumuzun yapısı", "Denizlerin kirlenmesi", "Yağmurun oluşumu"],
-          "cevap": "Su tasarrufunun hayati önemi"
-        },
-        {
-          "metin": "28. Soru: Şiir, düz yazıdan farklıdır. Düz yazıda amaç bir düşünceyi anlatmaktır, şiirde ise amaç o düşünceyi hissettirmektir. Şiir, kelimelerin dansıdır. Okuyucunun kalbine dokunmuyorsa, en güzel kafiyeler bile anlamsızdır.\n\nParçaya göre şiirin temel amacı nedir?",
-          "secenekler": ["Bilgi vermek", "Düşünceyi hissettirmek", "Kafiye yapmak", "Olay anlatmak"],
-          "cevap": "Düşünceyi hissettirmek"
-        },
-        {
-          "metin": "29. Soru: Çocukların hayal dünyası sınırsızdır. Bir karton kutu onlar için bazen bir uzay gemisi, bazen bir kaledir. Yetişkinler mantık çerçevesinde düşünürken, çocuklar imkansızı başarır. Bu yaratıcılığı köreltmemek gerekir.\n\nParçada çocukların hangi özelliği övülmüştür?",
-          "secenekler": ["Sessiz olmaları", "Çabuk büyümeleri", "Sınırsız hayal güçleri", "Mantıklı düşünmeleri"],
-          "cevap": "Sınırsız hayal güçleri"
-        },
-        {
-          "metin": "30. Soru: Yapay zeka, insan hayatını kolaylaştıran en büyük devrimlerden biridir. Ancak duygusal zekadan yoksundur. Bir makine şiir yazabilir ama aşık olamaz. İnsanı insan yapan şey, hataları, duyguları ve vicdanıdır.\n\nParçaya göre yapay zekanın insandan eksiği nedir?",
-          "secenekler": ["Hızlı işlem yapamaması", "Bilgi kapasitesinin azlığı", "Duygusal zeka ve vicdan yoksunluğu", "Elektriksiz çalışamaması"],
-          "cevap": "Duygusal zeka ve vicdan yoksunluğu"
         }
       ]
+    }
+  ]
+}
