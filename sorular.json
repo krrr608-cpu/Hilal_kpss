@@ -14,7 +14,13 @@
   },
   "kategoriler": [
     {
+          {
       "ad": "Tarih",
+      "ikon": "public",
+      "renk": "green",
+      "sorular": [
+        {
+      "ad": "Tarih 2",
       "ikon": "history_edu",
       "renk": "orange",
       "sorular": [
