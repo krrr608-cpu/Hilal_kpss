@@ -7,10 +7,10 @@
   },
   "kategoriler": [
     {
-      "ad": "Tarih Bölümü",
+      "ad": "Tarih",
       "ikon": "account_balance",
       "renk": "blue",
-      "alt_kategoriler": [
+      [
         {
           "ad": "Osmanlı Kuruluş Notu",
           "tip": "not",
