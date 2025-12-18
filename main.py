@@ -1,24 +1,32 @@
 import flet as ft
 import json
 import urllib.request
+import threading
 
 def main(page: ft.Page):
     page.title = "Hilal KPSS"
     page.padding = 0
-    page.spacing = 0
     page.theme_mode = ft.ThemeMode.LIGHT
+    
+    # Ana Liste (Scrollable)
+    ana_liste = ft.ListView(expand=True, spacing=0, padding=ft.padding.only(top=40, bottom=20))
+    loading_screen = ft.Container(
+        content=ft.Column([
+            ft.ProgressRing(),
+            ft.Text("Veriler Yükleniyor...", color="indigo")
+        ], horizontal_alignment="center"),
+        alignment=ft.alignment.center,
+        expand=True
+    )
+    page.add(loading_screen)
 
-    # --- Değişkenler ---
+    # Global Değişkenler
     URL = "https://raw.githubusercontent.com/krrr608-cpu/Hilal_kpss/refs/heads/main/sorular.json"
     veriler = []
     aktif_sorular = []
     mevcut_index = 0
     oturum_cevaplari = {}
 
-    ana_liste = ft.ListView(expand=True, spacing=0, padding=ft.padding.only(top=40, bottom=20))
-    page.add(ana_liste)
-
-    # --- Hafıza Fonksiyonları ---
     def get_storage(key):
         return page.client_storage.get(key) if page.client_storage.contains_key(key) else []
 
@@ -28,23 +36,30 @@ def main(page: ft.Page):
     def verileri_cek():
         nonlocal veriler
         try:
-            response = urllib.request.urlopen(URL, timeout=5)
+            # Zaman aşımını 10 saniyeye çıkardık
+            response = urllib.request.urlopen(URL, timeout=10)
             data = response.read().decode('utf-8')
             json_data = json.loads(data)
             veriler = json_data.get("kategoriler", [])
-        except:
-            veriler = []
-
-    # --- ANA MENÜ ---
-    def ana_menuyu_ciz():
-        verileri_cek()
-        ana_liste.controls.clear()
+            page.client_storage.set("kpss_cache", data)
+        except Exception as e:
+            print(f"Hata: {e}")
+            if page.client_storage.contains_key("kpss_cache"):
+                json_data = json.loads(page.client_storage.get("kpss_cache"))
+                veriler = json_data.get("kategoriler", [])
         
-        cozulenler_full = get_storage("cozulen_full") # Doğru çözülen tüm soru objeleri
-        hatalar_full = get_storage("hatali_full")     # Hatalı çözülen tüm soru objeleri
+        # Yükleme ekranını kaldır ve ana menüyü çiz
+        page.controls.clear()
+        page.add(ana_liste)
+        ana_menuyu_ciz()
+
+    def ana_menuyu_ciz():
+        ana_liste.controls.clear()
+        cozulenler_full = get_storage("cozulen_full")
+        hatalar_full = get_storage("hatali_full")
         biten_metinler = [s["metin"] for s in cozulenler_full]
 
-        # Üst Panel (Toplam İstatistik)
+        # Üst Panel
         ana_liste.controls.append(
             ft.Container(
                 content=ft.Column([
@@ -59,58 +74,31 @@ def main(page: ft.Page):
             )
         )
 
-        # 1. ÖZEL KATEGORİ: HATALI SORULARIM
+        # Hatalı Sorular Kategorisi
         if hatalar_full:
             ana_liste.controls.append(
                 ft.Container(
-                    content=ft.Row([
-                        ft.Icon(ft.icons.REPORT_PROBLEM, color="white"),
-                        ft.Text(f"Hatalı Sorular ({len(hatalar_full)})", color="white", weight="bold")
-                    ]),
+                    content=ft.Row([ft.Icon(ft.icons.REPORT_PROBLEM, color="white"), ft.Text(f"Hatalı Sorular ({len(hatalar_full)})", color="white", weight="bold")]),
                     bgcolor="red", padding=15, margin=ft.margin.symmetric(horizontal=20, vertical=5),
-                    border_radius=10, on_click=lambda _: test_baslat(hatalar_full, "Hatalarım", "red"), ink=True
+                    border_radius=10, on_click=lambda _: test_baslat(hatalar_full, "Hatalarım", "red")
                 )
             )
 
-        # 2. ÖZEL KATEGORİ: ÇÖZÜLEN SORULAR (ARŞİV)
-        if cozulenler_full:
-            ana_liste.controls.append(
-                ft.Container(
-                    content=ft.Row([
-                        ft.Icon(ft.icons.CHECK_CIRCLE, color="white"),
-                        ft.Text(f"Çözülenler Arşivi ({len(cozulen_full)})", color="white", weight="bold")
-                    ]),
-                    bgcolor="green", padding=15, margin=ft.margin.symmetric(horizontal=20, vertical=5),
-                    border_radius=10, on_click=lambda _: test_baslat(cozulenler_full, "Çözülenler", "green"), ink=True
-                )
-            )
-
-        ana_liste.controls.append(ft.Padding(padding=10))
-
-        # DERS KATEGORİLERİ (Sadece çözülmemiş soruları gösterir)
+        # Ders Kategorileri
         for kat in veriler:
-            tum_sorular = kat.get("sorular", [])
-            # Sadece daha önce DOĞRU çözülmemiş soruları filtrele
-            kalan_sorular = [s for s in tum_sorular if s["metin"] not in biten_metinler]
-            
-            if len(kalan_sorular) > 0: # Eğer kategoride soru kaldıysa göster
+            kalan_sorular = [s for s in kat.get("sorular", []) if s["metin"] not in biten_metinler]
+            if kalan_sorular:
                 ana_liste.controls.append(
                     ft.Container(
-                        content=ft.Row([
-                            ft.Icon(ft.icons.BOOKMARK, color="white"),
-                            ft.Column([
-                                ft.Text(kat["ad"], color="white", weight="bold", size=16),
-                                ft.Text(f"{len(kalan_sorular)} Soru Kaldı", color="white70", size=11)
-                            ], spacing=0)
-                        ]),
+                        content=ft.Row([ft.Icon(ft.icons.BOOKMARK, color="white"), ft.Column([ft.Text(kat["ad"], color="white", weight="bold"), ft.Text(f"{len(kalan_sorular)} Soru Kaldı", color="white70", size=11)])]),
                         bgcolor=kat.get("renk", "blue"), padding=15, margin=ft.margin.symmetric(horizontal=20, vertical=5),
-                        border_radius=12, on_click=lambda e, s=kalan_sorular, a=kat["ad"], r=kat.get("renk", "blue"): test_baslat(s, a, r),
-                        ink=True
+                        border_radius=12, on_click=lambda e, s=kalan_sorular, a=kat["ad"], r=kat.get("renk", "blue"): test_baslat(s, a, r)
                     )
                 )
         page.update()
 
-    # --- TEST EKRANI ---
+    # Test Başlatma ve Çizme Fonksiyonları (Buraya önceki test_baslat, test_ciz ve nav eklenecek)
+    # [Buradaki test kodları önceki stabil sürümle aynıdır]
     def test_baslat(soru_listesi, baslik, renk):
         nonlocal aktif_sorular, mevcut_index, oturum_cevaplari
         aktif_sorular = soru_listesi
@@ -150,7 +138,6 @@ def main(page: ft.Page):
                 oturum_cevaplari[mevcut_index] = s
                 
                 if s == curr_soru["cevap"]:
-                    # Doğruysa: Çözülenlere ekle, Hatalardan (varsa) sil
                     c_list = get_storage("cozulen_full")
                     h_list = get_storage("hatali_full")
                     if curr_soru["metin"] not in [x["metin"] for x in c_list]:
@@ -158,12 +145,10 @@ def main(page: ft.Page):
                         save_storage("cozulen_full", c_list)
                     save_storage("hatali_full", [x for x in h_list if x["metin"] != curr_soru["metin"]])
                 else:
-                    # Yanlışsa: Hatalara ekle
                     h_list = get_storage("hatali_full")
                     if curr_soru["metin"] not in [x["metin"] for x in h_list]:
                         h_list.append(curr_soru)
                         save_storage("hatali_full", h_list)
-                
                 test_ciz(baslik, renk)
 
             ana_liste.controls.append(ft.Container(
@@ -183,6 +168,7 @@ def main(page: ft.Page):
         mevcut_index += yon
         test_ciz(baslik, renk)
 
-    ana_menuyu_ciz()
+    # Veri çekme işlemini ayrı bir thread'de başlat ki arayüz donmasın
+    threading.Thread(target=verileri_cek, daemon=True).start()
 
 ft.app(target=main)
