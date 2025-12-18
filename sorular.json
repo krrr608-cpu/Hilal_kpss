@@ -10,23 +10,11 @@
       "ad": "Tarih",
       "ikon": "account_balance",
       "renk": "blue",
-      [
+      "sorular": [
         {
-          "ad": "Osmanlı Kuruluş Notu",
-          "tip": "not",
-          "icerik": "Osmanlı Devleti 1299 yılında Osman Bey tarafından Söğüt ve Domaniç çevresinde kurulmuştur. İlk padişah Osman Bey'dir. Bizans ile yapılan ilk savaş Koyunhisar Savaşı'dır.",
-          "renk": "orange"
-        },
-        {
-          "ad": "Genel Tarih Testi",
-          "renk": "green",
-          "sorular": [
-            {
-              "metin": "İstanbul kaç yılında fethedildi?",
-              "secenekler": ["1453", "1071", "1299", "1923"],
-              "cevap": "1453"
-            }
-          ]
+          "metin": "İstanbul kaç yılında fethedildi?",
+          "secenekler": ["1453", "1071", "1299", "1923"],
+          "cevap": "1453"
         }
       ]
     },
@@ -571,7 +559,7 @@
           "cevap": "Muhammed Ali Cinnah"
         },
         {
-          "metin": "108. Güney Afrika Cumhuriyeti'nde ırkçılığa (Apartheid) karşı mücadele eden ve ülkenin ilk siyahi devlet başkanı olan lider kimdir?",
+          "metin": "108. Güney Afrika Cumhuriyeti'nde 10 ırkçılığa (Apartheid) karşı mücadele eden ve ülkenin ilk siyahi devlet başkanı olan lider kimdir?",
           "secenekler": ["Nelson Mandela", "Desmond Tutu", "Kofi Annan", "Barack Obama"],
           "cevap": "Nelson Mandela"
         },
