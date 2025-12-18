@@ -27,16 +27,15 @@ jobs:
       - name: Kutuphaneleri Yukle
         run: |
           pip install -r requirements.txt
-          # Senin istediğin o güvenli sürümü yüklüyoruz:
-          pip install flet==0.21.2
+          # En stabil sürümü kuruyoruz
+          pip install --force-reinstall flet==0.23.2
 
       - name: APK Derle
-        # ARTIK BURAYA ISIM YAZMIYORUZ, flet.yaml DOSYASINDAN OTOMATIK ALACAK
+        # İkon yolunu flet.yaml'dan alacağı için sadece verbose ekliyoruz
         run: flet build apk --verbose
 
       - name: Dosyayi Yukle
         uses: actions/upload-artifact@v4
         with:
-          name: Hilal_kpss_APK
+          name: Hilal_kpss_Final
           path: build/apk/app-release.apk
-          
