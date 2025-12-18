@@ -1,4 +1,4 @@
-product_name: "Hilal_kpss"
-executable_name: "Hilal_kpss"
+product_name: "Hilal KPSS"
+executable_name: "hilalkpss"
 android:
   icon: "assets/icon.png"
