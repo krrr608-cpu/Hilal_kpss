@@ -965,6 +965,13 @@
           "cevap": "Duygusal zeka ve vicdan yoksunluğu"
         }
       ]
-    }
-  ]
-}
+      {
+    "ad": "Tarih Bölümü",
+      "alt_kategoriler": [
+        {
+          "ad": "Osmanlı Kuruluş Notu",
+          "tip": "not",
+          "icerik": "Osmanlı Devleti 1299'da Osman Bey tarafından kurulmuştur. \n\nÖnemli Olaylar:\n- Koyunhisar Savaşı\n- Bursa'nın fethi...",
+          "renk": "orange"
+        },
+        {
