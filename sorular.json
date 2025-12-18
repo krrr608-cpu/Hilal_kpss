@@ -1,33 +1,29 @@
 {
   "ayarlar": {
-    "baslik": "Hilal",
-    "apk_versiyonu": 1.0,
-    "tema_rengi": "pink",
-    "arka_plan_rengi": "#fcfcfc"
-  },
-  "tasarim": {
-    "buton_yuvarlakligi": 15,
-    "soru_yazi_boyutu": 18,
-    "sik_yazi_boyutu": 16,
-    "baslik_ortala": true,
-    "golge_olsun_mu": true
+    "baslik": "Hilal KPSS",
+    "tema_rengi": "indigo",
+    "arka_plan_rengi": "#f3f4f6"
   },
   "kategoriler": [
     {
-      "ad": "Tarih",
-      "ikon": "public",
-      "renk": "green",
-      "sorular": [
+      "ad": "Tarih Bölümü",
+      "ikon": "account_balance",
+      "renk": "blue",
+      "alt_kategoriler": [
         {
-          "metin": "İstanbul kaç yılında fethedildi?",
-          "secenekler": ["1453", "1071", "1299", "1923"],
-          "cevap": "1453"
+          "ad": "Osmanlı Kuruluş Notu",
+          "tip": "not",
+          "icerik": "Osmanlı Devleti 1299 yılında Osman Bey tarafından kurulmuştur.",
+          "renk": "orange"
         },
         {
-          "metin": "1. Milli Mücadele'nin 'amacı, gerekçesi ve yöntemi' ilk kez nerede belirtilmiştir?",
-          "secenekler": ["Havza Genelgesi", "Amasya Genelgesi", "Erzurum Kongresi", "Sivas Kongresi"],
-          "cevap": "Amasya Genelgesi"
-          }
+          "ad": "Genel Tarih Testi",
+          "sorular": [
+            {
+              "metin": "İstanbul kaç yılında fethedildi?",
+              "secenekler": ["1453", "1071", "1299", "1923"],
+              "cevap": "1453"
+            }
       ]
     },
     {
@@ -965,13 +961,3 @@
           "cevap": "Duygusal zeka ve vicdan yoksunluğu"
         }
       ]
-      {
-    "ad": "Tarih Bölümü",
-      "alt_kategoriler": [
-        {
-          "ad": "Osmanlı Kuruluş Notu",
-          "tip": "not",
-          "icerik": "Osmanlı Devleti 1299'da Osman Bey tarafından kurulmuştur. \n\nÖnemli Olaylar:\n- Koyunhisar Savaşı\n- Bursa'nın fethi...",
-          "renk": "orange"
-        },
-        {
