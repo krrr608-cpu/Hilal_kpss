@@ -12,7 +12,6 @@ def main(page: ft.Page):
     # --- DEĞİŞKENLER ---
     BASE_URL = "https://raw.githubusercontent.com/krrr608-cpu/Hilal_kpss/refs/heads/main/sorular.json"
     veriler = []
-    # Varsayılan renkler (JSON yüklenene kadar kullanılacak)
     ana_tema_rengi = "indigo" 
     arka_plan = "#f3f4f6"
     
@@ -22,12 +21,38 @@ def main(page: ft.Page):
 
     ana_liste = ft.ListView(expand=True, spacing=0)
     
-    status_text = ft.Text("Renkler ve Sorular Yükleniyor...", weight="bold")
+    # --- SORUYA GİT ÖZELLİĞİ ---
+    soru_giris = ft.TextField(label="Gitmek istediğiniz sayıyı yazın", keyboard_type=ft.KeyboardType.NUMBER)
+
+    def soruya_git_dialog(e, baslik, renk):
+        def git_basildi(e2):
+            nonlocal mevcut_index
+            try:
+                hedef = int(soru_giris.value) - 1
+                if 0 <= hedef < len(aktif_sorular):
+                    mevcut_index = hedef
+                    page.dialog.open = False
+                    test_ciz(baslik, renk)
+                else:
+                    soru_giris.error_text = f"1 ile {len(aktif_sorular)} arası bir sayı girin."
+                    page.update()
+            except:
+                pass
+
+        page.dialog = ft.AlertDialog(
+            title=ft.Text("Soruya Git"),
+            content=soru_giris,
+            actions=[
+                ft.TextButton("İptal", on_click=lambda _: setattr(page.dialog, "open", False) or page.update()),
+                ft.ElevatedButton("Hızlı Git", on_click=git_basildi, bgcolor=renk, color="white")
+            ]
+        )
+        page.dialog.open = True
+        page.update()
+
+    status_text = ft.Text("Veriler Senkronize Ediliyor...", weight="bold")
     loader_container = ft.Container(
-        content=ft.Column([
-            ft.ProgressRing(color="indigo"),
-            status_text
-        ], horizontal_alignment="center", alignment="center"),
+        content=ft.Column([ft.ProgressRing(color="indigo"), status_text], horizontal_alignment="center", alignment="center"),
         expand=True
     )
     page.add(loader_container)
@@ -43,17 +68,13 @@ def main(page: ft.Page):
         try:
             current_url = f"{BASE_URL}?v={int(time.time())}"
             req = urllib.request.Request(current_url, headers={'User-Agent': 'Mozilla/5.0'})
-            
             with urllib.request.urlopen(req, timeout=10) as response:
                 raw_data = response.read().decode('utf-8')
                 json_data = json.loads(raw_data)
-                
-                # --- JSON'DAN AYARLARI OKU ---
                 ayarlar = json_data.get("ayarlar", {})
                 ana_tema_rengi = ayarlar.get("tema_rengi", "indigo")
                 arka_plan = ayarlar.get("arka_plan_rengi", "#f3f4f6")
                 veriler = json_data.get("kategoriler", [])
-                
                 page.client_storage.set("offline_data", raw_data)
         except:
             if page.client_storage.contains_key("offline_data"):
@@ -74,7 +95,6 @@ def main(page: ft.Page):
         hatalar = get_local("hatali_full")
         biten_metinler = [s["metin"] for s in cozulenler]
 
-        # Üst Panel (Artık JSON'daki ana_tema_rengi'ni kullanıyor)
         ana_liste.controls.append(ft.Container(
             content=ft.Column([
                 ft.Text("HİLAL KPSS", size=24, weight="bold", color="white"),
@@ -86,7 +106,6 @@ def main(page: ft.Page):
             bgcolor=ana_tema_rengi, padding=30, border_radius=ft.border_radius.only(bottom_left=25, bottom_right=25)
         ))
 
-        # Kategori Butonları
         if hatalar:
             ana_liste.controls.append(ft.Container(
                 content=ft.Row([ft.Icon(ft.icons.ERROR, color="red"), ft.Text(f"Hatalı Sorular ({len(hatalar)})", weight="bold")]),
@@ -101,7 +120,6 @@ def main(page: ft.Page):
                 border_radius=10, on_click=lambda _: test_baslat(cozulenler, "Arşiv", "green")
             ))
 
-        # Dersler (Her ders kendi JSON rengini kullanıyor)
         for kat in veriler:
             kalan = [s for s in kat.get("sorular", []) if s["metin"] not in biten_metinler]
             if kalan:
@@ -109,7 +127,6 @@ def main(page: ft.Page):
                     content=ft.Row([ft.Icon(ft.icons.PLAY_ARROW, color="white"), ft.Text(f"{kat['ad']} ({len(kalan)} Soru)", color="white")]),
                     bgcolor=kat.get("renk", ana_tema_rengi), padding=15, margin=ft.margin.symmetric(horizontal=20, vertical=5),
                     border_radius=10, on_click=lambda e, s=kalan, a=kat["ad"], r=kat.get("renk", ana_tema_rengi): test_baslat(s, a, r),
-                    ink=True
                 ))
         page.update()
 
@@ -128,12 +145,15 @@ def main(page: ft.Page):
         
         soru = aktif_sorular[mevcut_index]
         
-        # Test başlığı rengi
         ana_liste.controls.append(ft.Container(
             content=ft.Row([
                 ft.IconButton(ft.icons.ARROW_BACK, icon_color="white", on_click=lambda _: ana_menuyu_ciz()),
                 ft.Text(baslik, color="white", weight="bold"),
-                ft.Text(f"{mevcut_index+1}/{len(aktif_sorular)}", color="white")
+                # TIKLANABİLİR SORU SAYISI
+                ft.TextButton(
+                    content=ft.Text(f"{mevcut_index+1}/{len(aktif_sorular)}", color="white", weight="bold"),
+                    on_click=lambda e: soruya_git_dialog(e, baslik, renk)
+                )
             ], alignment="spaceBetween"),
             bgcolor=renk, padding=10
         ))
