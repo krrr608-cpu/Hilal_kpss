@@ -816,7 +816,107 @@
           "metin": "3. Soru: Kitap okumak zihni besler, kelime dağarcığını geliştirir ve empati yeteneğini artırır. Ayrıca stresi azaltarak zihinsel dinginlik sağlar. Ancak dijital bağımlılık bu alışkanlığı zayıflatmaktadır.\n\nParçaya göre kitap okumanın faydalarından biri değildir?",
           "secenekler": ["Empati kurma becerisini geliştirmesi", "Kelime hazinesini zenginleştirmesi", "Doğrudan gelir sağlaması", "Stresi azaltması"],
           "cevap": "Doğrudan gelir sağlaması"
-        }
+        },
+        {
+      "metin": "(I) Modern çağın insanı, sürekli bir yerlere yetişme telaşı içinde. (II) Bu hız tutkusu, hayatın tadını çıkarmasına engel oluyor. (III) Eskiden insanlar, bir fincan kahve içerken saatlerce sohbet ederlerdi. (IV) Oysa şimdi kahvelerimizi bile karton bardaklarda, yürürken içiyoruz. (V) Teknolojinin gelişmesiyle birlikte iletişim araçları da çeşitlendi. (VI) Bu durum, yüz yüze iletişimin samimiyetini maalesef azalttı. Bu parçadaki numaralanmış cümlelerden hangisi düşüncenin akışını bozmaktadır?",
+      "secenekler": ["A) II", "B) III", "C) IV", "D) V", "E) VI"],
+      "cevap": "D) V"
+    },
+    {
+      "metin": "Yazarlık, sadece kelimeleri yan yana getirmek değildir. İyi bir yazar, okuyucunun ruhuna dokunabilmeli, onu satır aralarında gezdirebilmelidir. Bir hikâyeyi anlatmak herkesin harcı olabilir ama o hikâyeyi okurun zihninde bir film gibi canlandırmak ustalık ister. Yazar, kelimelerden bir dünya kurar ve okuru o dünyanın başrol oyuncusu yapar. Bu parçada asıl anlatılmak istenen aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "A) Yazarlık eğitimi almadan iyi bir eser ortaya konamaz.",
+        "B) Herkes hikâye anlatabilir ancak herkes yazar olamaz.",
+        "C) Yazarlığın temeli, okuyucuyla duygusal bir bağ kurup imgesel bir dünya yaratmaktır.",
+        "D) Kelime hazinesi geniş olmayan kişiler yazarlık yapmamalıdır.",
+        "E) Okuyucular, kendilerini hikâyenin içinde hissetmedikleri eserleri okumazlar."
+      ],
+      "cevap": "C) Yazarlığın temeli, okuyucuyla duygusal bir bağ kurup imgesel bir dünya yaratmaktır."
+    },
+    {
+      "metin": "Eleştirmenlerin çoğu, sanat eserlerini değerlendirirken nesnel olmaya çalıştıklarını söylerler. Ancak bu, pratikte pek mümkün değildir. Çünkü her eleştirmen, esere kendi bilgi birikimi, zevkleri ve dünya görüşü penceresinden bakar. Bir şiiri okurken hissettikleri, geçmişte yaşadığı bir olayla ilgili olabilir. Bu nedenle 'tamamen tarafsız eleştiri' kavramı, ulaşılması güç bir idealdan ibarettir. Bu parçadan çıkarılabilecek en kapsamlı yargı aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "A) Eleştirmenler, sanatçının kişiliğini eserden ayrı tutmalıdır.",
+        "B) Öznel değerlendirmeler, sanat eserinin değerini düşürür.",
+        "C) Eleştiride tam anlamıyla nesnellik mümkün değildir; kişisel birikimler devreye girer.",
+                "D) Geçmişte yaşanan olaylar, eleştirmenlerin yanlış kararlar vermesine neden olur.",
+        "E) İdeal bir eleştiri için eleştirmenin duygularından arınması gerekir."
+      ],
+      "cevap": "C) Eleştiride tam anlamıyla nesnellik mümkün değildir; kişisel birikimler devreye girer."
+    },
+    {
+      "metin": "İnsan beyni, çözülmesi en zor bilmecelerden biridir. Yıllardır süren araştırmalara rağmen hâlâ nasıl işlediğine dair bilmediğimiz çok şey var. Ancak bilinen bir gerçek var ki o da beynin 'plastisite' özelliğidir. Yani beyin, deneyimlerle kendini değiştirebilir ve geliştirebilir. Yeni bir dil öğrenmek, bir enstrüman çalmak veya farklı bir rota kullanmak bile beyinde yeni nöral bağlantıların oluşmasını sağlar. Bu parçaya göre aşağıdakilerden hangisi beyinle ilgili kesin olarak bilinen bir özelliktir?",
+      "secenekler": [
+        "A) Tüm sırlarının çözülmüş olması.",
+        "B) Yaşlandıkça öğrenme kapasitesinin durması.",
+        "C) Sadece akademik çalışmalarla gelişmesi.",
+        "D) Doğuştan gelen yapısının değiştirilemez olması.",
+        "E) Deneyimler ve öğrenme yoluyla yapısal değişim gösterebilmesi."
+      ],
+      "cevap": "E) Deneyimler ve öğrenme yoluyla yapısal değişim gösterebilmesi."
+    },
+    {
+      "metin": "(I) Şiir, sözcüklerin dansıdır adeta. (II) Şair, kelimeleri öyle bir seçer ki okuyucu ritmi içinde hisseder. (III) Roman ise daha çok bir mimari yapı gibidir; planlı ve detaylıdır. (IV) Hikâye türü, romandan daha kısa olduğu için okunması daha kolaydır. (V) Şiirde duygu ön plandayken romanda olay örgüsü ve karakterler daha baskındır. (VI) Bu yüzden şiir okuru ile roman okuru birbirinden farklı beklentilere sahiptir. Bu parçadaki numaralanmış cümlelerden hangisi karşılaştırmanın dışına çıkmıştır?",
+      "secenekler": ["A) II", "B) III", "C) IV", "D) V", "E) VI"],
+      "cevap": "C) IV"
+    },
+    {
+      "metin": "Çocuklara kitap okuma alışkanlığı kazandırmak için yapılan en büyük hata, onları zorlamaktır. 'Oku!' demek yerine, evde kitap okuyan bir ebeveyn modeli çizmek çok daha etkilidir. Çocuklar, söylenenlerden çok gördüklerini taklit ederler. Eğer evde televizyon sürekli açıksa ve kimse eline kitap almıyorsa, çocuğun kitap kurdu olmasını beklemek hayalcilik olur. Bu parçada vurgulanan asıl düşünce hangisidir?",
+      "secenekler": [
+        "A) Çocuklara zorla kitap okutulmalıdır.",
+        "B) Televizyon, çocuk gelişimini olumsuz etkiler.",
+        "C) Kitap okuma alışkanlığı, sözlü uyarılardan çok rol model olunarak kazandırılır.",
+        "D) Okullarda okuma saatleri artırılmalıdır.",
+        "E) Her çocuğun ilgi alanı farklıdır, kitap okumayı sevmeyebilirler."
+      ],
+      "cevap": "C) Kitap okuma alışkanlığı, sözlü uyarılardan çok rol model olunarak kazandırılır."
+    },
+    {
+      "metin": "Eskiden mektup yazmak bir ritüeldi. Kâğıdın seçimi, kalemin mürekkebi, zarfın özenle kapatılması... Hepsi ayrı bir incelik gerektirirdi. Mektubun cevabını beklemek ise sabrı öğreten bir süreçti. Günümüzde ise e-postalar ve anlık mesajlaşma uygulamaları sayesinde iletişim hızı ışık hızına ulaştı. Ancak bu hız, iletişimin 'ruhunu' biraz zedeledi gibi görünüyor. Bu parçadan hareketle hangisine ulaşılamaz?",
+      "secenekler": [
+        "A) Teknolojik gelişmeler iletişimi hızlandırmıştır.",
+        "B) Eski dönemlerde iletişim araçları daha sınırlıydı.",
+        "C) Mektup yazmak, sadece haberleşme değil, duygusal bir süreçti.",
+        "D) Günümüzdeki iletişim yöntemleri, eskisine göre daha samimi bulunmaktadır.",
+        "E) Hızlı iletişim, ifadelerin özensizleşmesine yol açabilmektedir."
+      ],
+      "cevap": "D) Günümüzdeki iletişim yöntemleri, eskisine göre daha samimi bulunmaktadır."
+    },
+    {
+      "metin": "Başarı, çoğu zaman buzdağının görünen kısmıdır. İnsanlar, birinin elde ettiği zaferi görür ama o zaferin arkasındaki uykusuz geceleri, başarısız denemeleri, reddedilişleri ve fedakârlıkları görmezler. Hiçbir büyük başarı, tesadüfen veya bir gecede gerçekleşmez. Sabır, azim ve sürekli çalışma, başarının görünmeyen ama en önemli bileşenleridir. Yazarın bu parçada anlatmak istediği temel düşünce nedir?",
+      "secenekler": [
+        "A) Başarılı olmak için şanslı olmak gerekir.",
+        "B) İnsanlar genellikle başkalarının başarısını kıskanır.",
+        "C) Gerçek başarı, arka planında büyük bir emek ve mücadele barındırır.",
+        "D) Başarısızlık, başarının önündeki en büyük engeldir.",
+        "E) Çok çalışmak her zaman başarıyı getirmez."
+      ],
+      "cevap": "C) Gerçek başarı, arka planında büyük bir emek ve mücadele barındırır."
+    },
+    {
+      "metin": "Doğa, insanoğlunun en büyük öğretmenidir. Bir ağacın mevsimlere göre değişimi bize sabrı, bir nehrin akışı bize sürekliliği, karıncaların çalışması ise iş birliğini öğretir. Ancak modern şehir hayatı, bizi bu öğretmenden kopardı. Beton binalar arasında sıkışıp kalan insan, doğanın fısıltısını duyamaz hale geldi. Bu parçada yakınlan durum aşağıdakilerden hangisidir?",
+      "secenekler": [
+        "A) Doğanın insanlara yanlış dersler vermesi.",
+        "B) Şehir hayatının sunduğu imkânların yetersizliği.",
+        "C) İnsanların doğadan koparak şehirleşmesi ve bunun ruhsal etkileri.",
+        "D) Mevsim geçişlerinin insan sağlığını olumsuz etkilemesi.",
+        "E) Eğitim sisteminde doğa sevgisine yer verilmemesi."
+      ],
+      "cevap": "C) İnsanların doğadan koparak şehirleşmesi ve bunun ruhsal etkileri."
+    },
+    {
+      "metin": "Sanatçı, çağına tanıklık eden kişidir. Ancak bu tanıklık, bir tarihçi veya gazeteci gibi sadece olayları kaydetmek değildir. Sanatçı, yaşananları kendi süzgecinden geçirir, ona estetik bir biçim verir ve duygusal bir boyut katar. Bir savaşın tarih kitabındaki anlatımı ile o savaşı anlatan bir tablonun veya şiirin etkisi aynı değildir. Sanat, gerçeği dönüştürerek onu ölümsüz kılar. Bu parçaya göre sanatçıyı tarihçiden ayıran temel özellik nedir?",
+      "secenekler": [
+        "A) Olayları olduğu gibi, değiştirmeden aktarması.",
+        "B) Gelecek nesillere bilgi vermeyi amaçlaması.",
+        "C) Gerçeği kendi yorumu ve estetik anlayışıyla yeniden biçimlendirmesi.",
+        "D) Sadece toplumsal olaylarla ilgilenmesi.",
+        "E) Belgelere dayanarak eserlerini oluşturması."
+      ],
+      "cevap": "C) Gerçeği kendi yorumu ve estetik anlayışıyla yeniden biçimlendirmesi."
+    }
+  ]
+}
       ]
     }
   ]
