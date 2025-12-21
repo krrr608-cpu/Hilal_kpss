@@ -1006,7 +1006,193 @@
         "E) Eğitim sistemi, öğrencileri ezbere yönlendirmemelidir"
       ],
       "cevap": "C) Okuma alışkanlığı kazanmak, bireysel gelişimin temel taşıdır"
+    },
+    {
+      "metin": "(I) Safranbolu evleri, Türk mimarisinin en zarif örneklerindendir. (II) Bu evler, genellikle yamaçlara kurulur, böylece hiçbiri diğerinin manzarasını kapatmaz. (III) Ahşap ve taşın mükemmel uyumu, bu yapılara ayrı bir sıcaklık katar. (IV) Günümüzde modern mimaride daha çok cam ve çelik malzemeler tercih ediliyor. (V) Evlerin iç tasarımında geniş sofalara yer verilmiştir. Hangisi akışı bozmaktadır?",
+      "secenekler": ["A) I", "B) II", "C) III", "D) IV", "E) V"],
+      "cevap": "D) IV"
+    },
+    {
+      "metin": "Dinlemek, sadece kulakla yapılan fiziksel bir eylem değildir; zihin ve yürek gerektirir. Karşımızdakinin sözünü kesmeden sadece ona odaklanmak, ona verdiğimiz değerin en büyük kanıtıdır. Çoğu zaman karşımızdakini 'cevap vermek' için dinliyoruz, 'anlamak' için değil. Yazarın bu parçada yakındığı durum hangisidir?",
+      "secenekler": [
+        "A) İnsanların konuşmayı sevmemesi.",
+        "B) İletişim araçlarının gürültülü olması.",
+        "C) Dinleme eyleminin, anlama amacından çok cevap verme amacıyla yapılması.",
+        "D) Uzun süren sohbetlerin zaman kaybı görülmesi.",
+        "E) İnsanların duygularını ifade etmekten kaçınması."
+      ],
+      "cevap": "C) Dinleme eyleminin, anlama amacından çok cevap verme amacıyla yapılması."
+    },
+    {
+      "metin": "(I) Balarıları, doğanın en çalışkan mimarlarıdır. (II) Petekleri en az malzemeyle en çok depolamayı yapacak şekilde altıgen formda inşa ederler. (III) Bu geometrik mükemmellik, matematikçileri bile hayrete düşürmektedir. (IV) Bal, binlerce yıldır insanlar tarafından şifa kaynağı olarak tüketilmektedir. (V) Bir balarısı, yarım kilo bal için milyonlarca çiçeği gezmek zorundadır. Bu parça ikiye ayrılmak istense ikinci paragraf hangi cümleyle başlar?",
+      "secenekler": ["A) II", "B) III", "C) IV", "D) V", "E) I"],
+      "cevap": "C) IV"
+    },
+    {
+      "metin": "Sanatçı, eserinde 'sokağın dilini' kullanmaktan çekinmemelidir. Bir pazarcı pazarcı gibi, bir çocuk çocuk gibi konuşmalıdır. Doğallık, kusursuz bir gramerden çok daha önemlidir. Bu parçada geçen 'sokağın dilini kullanmak' sözüyle anlatılmak istenen nedir?",
+      "secenekler": [
+        "A) Argo ve kaba ifadelere yer vermek.",
+        "B) Edebi sanatlardan uzak durmak.",
+        "C) Hayatın içindeki doğal ve gerçekçi konuşma üslubunu yansıtmak.",
+        "D) Sadece alt kültür gruplarını anlatmak.",
+        "E) Dil bilgisi kurallarını tamamen yok saymak."
+      ],
+      "cevap": "C) Hayatın içindeki doğal ve gerçekçi konuşma üslubunu yansıtmak."
+    },
+    {
+      "metin": "Teknoloji hayatımızı kolaylaştırsa da sabrımızı köreltiyor. Eskiden bir filmin vizyona girmesini aylarca beklerdik, şimdi 'yükleniyor' ikonuna beş saniye tahammül edemiyoruz. Her şeye anında ulaşma arzusu, bekleme kültürünü yok etti. Bu parçadan hareketle hangisine ulaşılabilir?",
+      "secenekler": [
+        "A) Teknolojik gelişmeler insan ilişkilerini güçlendirmiştir.",
+        "B) Hız tutkusu, insanların tahammül seviyesini düşürmüştür.",
+        "C) Beklemek, zaman kaybından başka bir şey değildir.",
+        "D) Eski dönemlerde insanlar daha mutsuzdu.",
+        "E) Teknolojiyi hayatımızdan tamamen çıkarmalıyız."
+      ],
+      "cevap": "B) Hız tutkusu, insanların tahammül seviyesini düşürmüştür."
+    },
+    {
+      "metin": "Roman yazmak, iğneyle kuyu kazmak gibidir. ----. Bir karakteri oluşturmak aylar sürebilir, olay örgüsündeki küçük bir mantık hatası tüm kurguyu yıkabilir. Yazar, kelimeleri bir kuyumcu titizliğiyle işler. Boş bırakılan yere hangisi getirilmelidir?",
+      "secenekler": [
+        "A) İlham geldiğinde gerisi çorap söküğü gibi gelir",
+        "B) Büyük bir sabır, emek ve dikkat gerektirir",
+        "C) Günümüzde herkes roman yazmaya hevesleniyor",
+        "D) Yayıncılar artık daha seçici davranıyor",
+        "E) Okuyucular uzun betimlemelerden hoşlanmıyor"
+      ],
+      "cevap": "B) Büyük bir sabır, emek ve dikkat gerektirir"
+    },
+    {
+      "metin": "Bir eleştirmen, eseri değerlendirirken yazarın kimliğine değil, metnin kendisine odaklanmalıdır. Yazarın siyasi görüşü veya geçmişi, eserin edebi değerini belirleyen ölçütler olamaz. Objektiflik, eleştirinin namusudur. Bu parçada asıl anlatılmak istenen nedir?",
+      "secenekler": [
+        "A) Eleştirmenler, yazarların hayatını yakından incelemelidir.",
+        "B) Edebi eserler, yazarın kişiliğinden izler taşır.",
+        "C) Eleştiri yapılırken yazarın kişiliği bir kenara bırakılıp sadece eser esas alınmalıdır.",
+        "D) Ön yargılı olmak, eleştirmenin popülaritesini artırır.",
+        "E) Her eser, yazarının dünya görüşünü yansıtmak zorundadır."
+      ],
+      "cevap": "C) Eleştiri yapılırken yazarın kişiliği bir kenara bırakılıp sadece eser esas alınmalıdır."
+    },
+    {
+      "metin": "(I) Uyku, vücudun kendini yenilediği en önemli zamandır. (II) Yetersiz uyku, bağışıklık sisteminin zayıflamasına yol açar. (III) Uzmanlar, yetişkin bir bireyin günde 7-8 saat uyumasını önermektedir. (IV) Rüyalar, bilinçaltımızın dışavurumu olarak kabul edilir. (V) Kaliteli bir uyku için yatak odasının karanlık olması gerekir. Hangisi akışı bozmaktadır?",
+      "secenekler": ["A) I", "B) II", "C) III", "D) IV", "E) V"],
+      "cevap": "D) IV"
+    },
+    {
+      "metin": "Tarih bilimi, sadece geçmişte kazanılan zaferleri anlatmak için yoktur. Aynı zamanda yapılan hataları da gösterir ki gelecek nesiller aynı yanlışlara düşmesin. Bu parçadan tarih bilimi ile ilgili hangisi çıkarılamaz?",
+      "secenekler": [
+        "A) Geleceğe ışık tuttuğu.",
+        "B) Toplumsal kimliğin oluşmasında rol oynadığı.",
+        "C) Sadece başarı ve zaferleri konu edindiği.",
+        "D) Toplumların hatalardan ders çıkarmasını sağladığı.",
+        "E) Toplumsal hafızayı oluşturduğu."
+      ],
+      "cevap": "C) Sadece başarı ve zaferleri konu edindiği."
+    },
+    {
+      "metin": "Teknolojinin zirvesindeyiz ama insanlığın çukurundayız bazen. Uzaydaki bir gezegene araç gönderebiliyoruz ama alt katımızdaki komşumuza bir 'merhaba'yı gönderemiyoruz. Mesafeler kısaldı ama gönüller arasındaki uçurumlar büyüdü. Bu parçada vurgulanan temel sorun nedir?",
+      "secenekler": [
+        "A) Teknolojik gelişmelerin yetersiz kalması.",
+        "B) İnsanların doğadan koparak şehirleşmesi.",
+        "C) Bilimsel ilerlemeye rağmen insani değerlerin ve ilişkilerin zayıflaması.",
+        "D) Komşuluk ilişkilerinin eski önemini yitirmesi.",
+        "E) İnsanların yalnızlaşarak içine kapanması."
+      ],
+      "cevap": "C) Bilimsel ilerlemeye rağmen insani değerlerin ve ilişkilerin zayıflaması."
+    },
+    {
+      "metin": "(I) Çay, Türk kültüründe sadece bir içecek değil, bir sosyalleşme aracıdır. (II) Sabah kahvaltısında, akşam oturmalarında hep çay vardır. (III) Türkiye, dünyada en çok çay tüketen ülkelerden biridir. (IV) Karadeniz Bölgesi'nin iklimi, çay tarımı için oldukça elverişlidir. (V) 'Çay koy da içelim' cümlesi, dertleşelim demenin en samimi halidir. Hangisi akışı bozmaktadır?",
+      "secenekler": ["A) I", "B) II", "C) III", "D) IV", "E) V"],
+      "cevap": "D) IV"
+    },
+    {
+      "metin": "Eğitim, bir kovayı doldurmak değil, bir ateşi yakmaktır. Öğrencilere sadece bilgi yüklemek, onları pasif birer depolama aygıtına dönüştürür. Oysa asıl amaç, onlarda merak uyandırmak ve sorgulama yeteneğini geliştirmektir. Bu parçaya göre nitelikli eğitimin temel amacı ne olmalıdır?",
+      "secenekler": [
+        "A) Müfredattaki tüm konuları eksiksiz öğretmek.",
+        "B) Öğrencinin zihnine çok bilgi depolamak.",
+        "C) Öğrencide öğrenme isteği ve eleştirel düşünme becerisi oluşturmak.",
+        "D) Sınav başarısını her şeyin önünde tutmak.",
+        "E) Disiplinli ve itaatkâr bireyler yetiştirmek."
+      ],
+      "cevap": "C) Öğrencide öğrenme isteği ve eleştirel düşünme becerisi oluşturmak."
+    },
+    {
+      "metin": "Bazı yazarlar, anlaşılmamayı bir derinlik göstergesi sanırlar. Oysa sadelik, ustalığın zirvesidir. En karmaşık duyguları bile herkesin anlayabileceği bir dille anlatabilmek marifettir. Yunus Emre yüzyıllar öncesinden seslenir ama herkes onu anlar. Yazarın savunduğu düşünce hangisidir?",
+      "secenekler": [
+        "A) Sanat eserleri sadece eğitimli kitleye hitap etmelidir.",
+        "B) Karmaşık dil kullanımı, eserin edebi değerini artırır.",
+        "C) Gerçek ustalık, yalın ve anlaşılır bir dille derin manalar ifade edebilmektir.",
+        "D) Eski şairlerin dili günümüze göre daha ağırdır.",
+        "E) Anlaşılmayan eserler zamanla değer kazanır."
+      ],
+      "cevap": "C) Gerçek ustalık, yalın ve anlaşılır bir dille derin manalar ifade edebilmektir."
+    },
+    {
+      "metin": "Yirmi yıl önce 'sosyal medya uzmanlığı' yoktu. Bugün ise yapay zeka mühendisliği revaçta. ----. Gelecekte hayatta kalacak olanlar, en zeki olanlar değil, değişime en hızlı ayak uyduranlar olacaktır. Boşluğa hangisi getirilmelidir?",
+      "secenekler": [
+        "A) Bu yüzden üniversite eğitimi önemini yitirmektedir",
+        "B) Ancak geleneksel meslekler her zaman varlığını koruyacaktır",
+        "C) Muhtemelen on yıl sonra adını bilmediğimiz yepyeni işler ortaya çıkacak",
+        "D) Gençlerin çoğu artık masa başı işleri tercih ediyor",
+        "E) Teknoloji, işsizlik oranlarının artmasına neden oluyor"
+      ],
+      "cevap": "C) Muhtemelen on yıl sonra adını bilmediğimiz yepyeni işler ortaya çıkacak"
+    },
+    {
+      "metin": "(I) Stres, modern çağın en büyük sağlık sorunlarından biri. (II) Uzun süreli stres pek çok hastalığa zemin hazırlıyor. (III) Stresle başa çıkmanın en etkili yolu düzenli egzersizdir. (IV) Egzersiz sırasında salgılanan hormonlar mutluluk verir. (V) Doğa yürüyüşleri de zihni boşaltır. İkinci paragraf hangi cümleyle başlar?",
+      "secenekler": ["A) II", "B) III", "C) IV", "D) V", "E) I"],
+      "cevap": "B) III"
+    },
+    {
+      "metin": "Kitap fuarları, son yıllarda kültür şöleninden çok panayır havasına büründü. Yayınevleri, nitelikli eserlerden çok 'çok satan' kitaplara odaklanıyor. Okurlar edebiyatı değil, ucuzluğu arıyor. Bu parçada eleştirilen durum nedir?",
+      "secenekler": [
+        "A) Kitap fiyatlarının fuarlarda yüksek olması.",
+        "B) Kitap fuarlarının ticari kaygıların gölgesinde kalarak kültürel niteliğini yitirmesi.",
+        "C) Yazarların okurlarla yeterince ilgilenmemesi.",
+        "D) Fuarların düzenlendiği alanların yetersizliği.",
+        "E) Popüler kitapların edebi değerinin düşük olması."
+      ],
+      "cevap": "B) Kitap fuarlarının ticari kaygıların gölgesinde kalarak kültürel niteliğini yitirmesi."
+    },
+    {
+      "metin": "Şiir çevirisi, edebiyatın en zorlu alanıdır. Bir şiiri başka bir dile çevirdiğinizde anlamı koruyabilirsiniz ama o 'müziği' kaybedersiniz. Bu parçadan 'şiir çevirisi' ile ilgili hangisine ulaşılabilir?",
+      "secenekler": [
+        "A) Şiir çevirisinin düz yazı çevirisinden daha kolay olduğuna.",
+        "B) Çeviride sadece kelime anlamlarının önemli olduğuna.",
+        "C) Şiirin ses ve ritim özelliklerini başka dile aktarmanın zorluğuna.",
+        "D) Şiirlerin asla başka bir dile çevrilmemesi gerektiğine.",
+        "E) Herkesin sözlük yardımıyla şiir çevirebileceğine."
+      ],
+      "cevap": "C) Şiirin ses ve ritim özelliklerini başka dile aktarmanın zorluğuna."
+    },
+    {
+      "metin": "Geçmişte yapılan hatalara takılıp kalmak, arabanın dikiz aynasına bakarak ileri gitmeye çalışmak gibidir; kaza yapmanız kaçınılmazdır. 'Dikiz aynasına bakarak ileri gitmek' benzetmesiyle anlatılan nedir?",
+      "secenekler": [
+        "A) Geçmiş deneyimlerden ders çıkarmak.",
+        "B) Sürekli geçmişi düşünerek geleceği inşa etmeye çalışmanın imkânsızlığı.",
+        "C) Geleceği planlarken çok dikkatli olmak.",
+        "D) Hataları görmezden gelmek.",
+        "E) Araba kullanırken dikkatli olmak."
+      ],
+      "cevap": "B) Sürekli geçmişi düşünerek geleceği inşa etmeye çalışmanın imkânsızlığı."
+    },
+    {
+      "metin": "(I) Karadeniz mutfağı denince akla ilk gelen hamsidir. (II) Mısır unu da bu mutfağın vazgeçilmez bir parçasıdır. (III) Hamsiden onlarca çeşit yemek yapılır. (IV) Ege mutfağında ise zeytinyağlılar başroldedir. (V) Karadeniz insanı elindeki malzemeyi yaratıcı şekilde kullanır. Hangisi akışı bozmaktadır?",
+      "secenekler": ["A) I", "B) II", "C) III", "D) IV", "E) V"],
+      "cevap": "D) IV"
+    },
+    {
+      "metin": "Edison, ampulü bulana kadar binlerce kez başarısız oldu. J.K. Rowling, kitabı basılmadan önce defalarca reddedildi. Zafer, 'düştüğü yerden kalkabilenlerindir'. Parçanın ana düşüncesi nedir?",
+      "secenekler": [
+        "A) Başarı için dahi olmak gerekir.",
+        "B) Şans, başarının en önemli faktörüdür.",
+        "C) Başarıya giden yol, kararlılıkla ve başarısızlıklara rağmen devam etmekten geçer.",
+        "D) Her başarısızlık, insanı hedeften uzaklaştırır.",
+        "E) Bazı insanlar doğuştan şanslıdır."
+      ],
+      "cevap": "C) Başarıya giden yol, kararlılıkla ve başarısızlıklara rağmen devam etmekten geçer."
     }
+  ]
+}
   ]
 }
       ]
